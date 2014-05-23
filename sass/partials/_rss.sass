@@ -1,0 +1,13 @@
+.j-rss
+  line-height: 1.5
+  h1
+    a:link,
+    a:visited
+
+  // this crazy selector displays the read more button as exactly this. Just keep as is.
+  br + a[target="_blank"]
+    @extend %btn-std
+  .rssFeedTitle
+    @extend h3
+    display: block
+    margin: 1em 0 0.5em

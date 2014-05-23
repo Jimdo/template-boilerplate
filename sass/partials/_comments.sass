@@ -1,0 +1,37 @@
+.j-comment
+  // reset standard margin
+  ul
+    margin: 0
+    padding: 0
+  li
+    list-style-type: none
+
+  dd
+    margin: 0
+
+  // the comment count displayed above the actual comments is an h2
+  h2
+
+  // spread the button/input styles from _button.sass
+
+  textarea,
+  input[type="text"]
+    @extend %input-std
+
+  input[type="submit"]
+    @extend %btn-std
+
+.commententry,
+.com-meta
+  // combined with the floats (see below), this adjusts the comment's display in a good way.
+  margin: 0 60px 0 90px
+  dd
+    margin: 0
+
+.com-avatar
+  float: left
+  img
+    display: block
+
+.number
+  float: right

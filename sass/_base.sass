@@ -1,0 +1,79 @@
+// SOME GENERAL ADVICE
+
+// The nesting within these files is kept as flat as possible. This helps to avoid
+// overriding style mode settings for the user. If you nest too deep, your selectors
+// are too powerful to be overridden. Also, it's just not necessary to do that in
+// most cases, so just don't do it.
+
+// Most of the partials provide a good basis to code from. Actually, filling the
+// _base.sass with the general layout and some colors gets you pretty far already.
+// Adjust the font sizes in the _font-settings.sass and the buttons in the
+// _buttons.sass to get going.
+
+// To easily build variations, simply alter the variables you already use within
+// the style.sass. It's the fastest way to create variations from the basic setup
+// of the style.sass
+
+// If you want to load various webfonts, it's best to do this for all variations etc
+// within the _base.sass. Keep in mind that every font means additional load
+// for the template users.
+
+// For compilation, adjust the settings in the config.rb to whatever you're comfortable with.
+
+$standard-transition: 200ms ease-in
+
+@import "compass"
+@import "partials/resets"
+@import "partials/font-settings"
+@import "partials/buttons"
+body
+
+h1, h2, h3, h4
+  font-family: inherit
+  margin: 0
+
+h1
+  @extend %t-xlarge
+h2
+  @extend %t-large
+h3
+  @extend %t-medium
+
+a:link,
+a:visited
+  img
+    border: 0
+
+a:hover,
+a:active,
+a:focus
+
+// CSS class for the stylable content container
+.content-options
+
+// CSS class for the stylable sidebar container
+.sidebar-options
+
+// CSS class for the stylable footer container
+.footer-options
+
+// CSS class for layout alignment with align to center as default
+.layout-alignment
+  margin: 0 auto
+
+// Import all partials
+@import "partials/navigation"
+
+@import "partials/blog"
+@import "partials/comments"
+
+@import "partials/download"
+@import "partials/form"
+@import "partials/hr"
+@import "partials/newsletter"
+@import "partials/password-page"
+@import "partials/rss"
+
+@import "partials/product"
+@import "partials/shop-checkout"
+@import "partials/sidecart"

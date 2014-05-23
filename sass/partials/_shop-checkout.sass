@@ -1,0 +1,106 @@
+// Styles for the checkout process.
+// To preview the checkout, use http://allcontents.jimdo.com/checkout
+
+// For the checkout steps, these are some helpful classes to get the general
+// checkout bar styling done. Feel free to throw in some colors here.
+#cc-checkout-steps
+  list-style-type: none
+  margin: 1em 0
+  padding: 0
+  width: 100%
+  li
+    display: block
+    float: left
+    text-align: center
+    width: 25%
+    &:first-child
+      span,
+      a:link,
+      a:visited
+        padding-left: 0
+    a:link,
+    a:visited,
+    span
+      display: block
+      opacity: 0.8
+      span
+        padding: 0
+  .cc-checkout-steps-ready
+    a:link,
+    a:visited
+      opacity: 0.5
+  .cc-checkout-steps-current
+    a:link,
+    a:visited
+      cursor: default
+      opacity: 1
+
+// For the actual checkout, the next declarations make sure you see some nice forms
+// If you want to keep your effort small, this is a great preset to work with.
+#cc-checkout-gutter
+  clear: both
+  .cc-checkout-btn
+    @extend %btn-std
+
+  input[type="text"],
+  input[type="email"],
+  textarea
+    @extend %input-std
+    width: 70%
+  label
+    display: block
+  textarea
+    min-height: 150px
+  fieldset
+    margin-bottom: 1em
+
+// Subheadings of the checkout steps including the links to change stuff.
+.cc-checkout-subheadings
+  @extend %t-medium
+  margin: 1em 0 0.5em
+  a
+    @extend %t-small
+
+// Display the total sum of the purchase bold
+.cc-checkout-total
+  font-weight: bold
+
+// Display numbers in the checkout table aligned to the right
+.cc-checkout-number
+  text-align: right
+
+// generic background color for stripes in the checkout table
+// also, float the product image and provide some padding for the table cells
+.cc-checkout-products
+  tbody
+    tr
+      &:nth-child(odd)
+        background-color: rgba(50,50,50,0.1)
+    td
+      padding: 5px
+      img
+        float: left
+        margin: 0 0.5em 0.5em 0
+
+// small print at the bottom of the checkout table should be small
+.cc-checkout-hint
+  @extend %t-small
+
+// You probably want that checkbox aligned to the right side of the checkout.
+.cc-checkout-shipping-address-checker
+  text-align: right
+
+// These options are a list. Getting rid of list styling here.
+.cc-checkout-paymentoption
+  list-style: none
+  margin: 0
+  padding: 0
+
+// If the user has a shipping address and an invoice address, show them next to
+// each other for better overview. Also, the CSS class is not a typo, leave as is.
+.cc-checkout-different-adress
+  fieldset
+    float: left
+    width: 48%
+    &:first-child
+      margin-right: 1em

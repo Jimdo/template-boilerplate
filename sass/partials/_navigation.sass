@@ -1,0 +1,95 @@
+// Style the main navigation. Uses the class which also adds functionality.
+
+.navigation-colors
+  ul
+
+  li
+
+  a:link,
+  a:visited
+
+  a:hover,
+  a:focus,
+  a:active
+
+  // Style the current/parent link (and only this one.)
+  .cc-nav-current,
+  .cc-nav-parent
+    > a:link,
+    > a:visited
+
+    > a:hover,
+    > a:focus,
+    > a:active
+
+// Style the second navigation.
+.subnavigation-colors
+  ul
+  li
+  a:link,
+  a:visited
+
+  a:hover,
+  a:focus,
+  a:active
+
+  .cc-nav-current,
+  .cc-nav-parent
+    > a:link,
+    > a:visited
+
+    > a:hover,
+    > a:focus,
+    > a:active
+
+// General navigation styles. Please be careful with overwriting style editor stuff here!
+
+// first navigation level. This is a UL
+.cc-nav-level-0
+
+  li
+
+  a:link,
+  a:visited
+
+  // used the > to target ONLY the real current/parent link,
+  // not the nested links "beneath" that one
+  .cc-nav-current > a:link,
+  .cc-nav-current > a:visited,
+  .cc-nav-parent > a:link,
+  .cc-nav-parent > a:visited,
+  a:hover,
+  a:focus,
+  a:active
+
+// second navigation level. This is a UL
+.cc-nav-level-1
+
+  li
+
+  a:link,
+  a:visited
+
+  .cc-nav-current > a:link,
+  .cc-nav-current > a:visited,
+  .cc-nav-parent > a:link,
+  .cc-nav-parent > a:visited,
+  a:hover,
+  a:focus,
+  a:active
+
+// third navigation level. This is a UL
+.cc-nav-level-2
+
+  li
+
+  a:link,
+  a:visited
+
+  .cc-nav-current > a:link,
+  .cc-nav-current > a:visited,
+  .cc-nav-parent > a:link,
+  .cc-nav-parent > a:visited,
+  a:hover,
+  a:focus,
+  a:active

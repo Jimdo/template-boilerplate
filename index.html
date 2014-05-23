@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="css/style.css" rel="stylesheet" />
+
+  <!-- This is how you link a variation -->
+  <link rel="stylesheet-variation" data-name="Reverse" href="css/variation.css" data-icon="#2f2f2f" />
+
+  <!-- Please provide the main color for the basic style.css as you do with variations. -->
+  <meta name="jimdo.color" content="#0099ee">
+
+  <!-- This en or disabled the awesomebgs -->
+  <meta name="jimdo.ownbg.allowed" content="yes">
+
+  <!-- You can disable styles for single Jimdo modules by adding them here. -->
+  <!-- In this case, the comments and the product module styles are not loaded -->
+  <!-- For a list of available modules check the documentation or the body tag in the preview. -->
+  <meta name="jimdo.styles.disabled" content="m-comment m-product" />
+
+</head>
+<!-- Of course, the HTML code needs to be adjusted to your needs. -->
+<body>
+  <div id="wrap" class="layout-alignment">
+    <header>
+      <nav>
+        <div class="navigation-colors">
+          <var data-level="1">navigation</var>
+        </div>
+      </nav>
+      <div>
+        <var max-height="200">logo</var>
+        <var>title</var>
+      </div>
+    </header>
+    <div class="container">
+      <div class="content">
+        <div class="content-options">
+          <var>content</var>
+        </div>
+      </div>
+      <aside class="sidebar-options">
+        <div class="subnavigation-colors">
+          <div>
+            <var data-level="2:3">navigation</var>
+          </div>
+        </div>
+        <section class="sidebar-options">
+          <var>sidebar</var>
+        </section>
+      </aside>
+      <footer>
+        <div class="footer-options">
+          <var>footer</var>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+</body>
+</html>

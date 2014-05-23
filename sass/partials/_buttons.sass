@@ -1,0 +1,49 @@
+// Button and input styles. Will be spread throughout the template, simply style them here.
+
+%btn-std
+  background-color: transparent
+  border: 0
+  +box-sizing(border-box)
+  color: inherit
+  cursor: pointer
+  display: inline-block
+  font-family: inherit
+  // the %t-base extend inserts the base font size declared in the font-settings.sass
+  @extend %t-base
+  margin: 1em 0
+  padding: 0.5em 1em
+  text-align: center
+  text-decoration: none
+  // For the transitions it's helpful to provide a $standard-transition variable
+  // spread throughout the files to keep transitions in line. It's in the _base.sass
+  +transition(background-color $standard-transition)
+  &:hover,
+  &:active,
+  &:focus
+    background-color: inherit
+    color: inherit
+    font-style: normal
+
+%btn-shop
+  @extend %btn-std
+  // You might want to use a different styling for shop buttons to stand out.
+  background-color: transparent
+  &:hover,
+  &:active,
+  &:focus
+    background-color: transparent
+
+%input-std
+  background-color: inherit
+  border: 0
+  +box-sizing(border-box)
+  color: inherit
+  font-family: inherit
+  @extend %t-base
+  padding: 0
+  +transition(border-color $standard-transition)
+  &:hover,
+  &:focus,
+  &:active
+    border-color: inherit
+    outline: none

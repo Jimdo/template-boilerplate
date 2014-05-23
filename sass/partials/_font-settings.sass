@@ -1,0 +1,81 @@
+// font size calculation. This uses REM units and PX as fallback.
+// Adjust the font sizes and line-heights in the varuiables, rest is magic.
+// Use the declarations via @extend %t-base etc.
+
+$tiny-font-size: 10px
+$tiny-font-line-height: 1.5
+$small-font-size: 13px
+$small-font-line-height: 1.5
+$base-font-size: 16px
+$base-font-line-height: 1.5
+$medium-font-size: 24px
+$medium-font-line-height: 1.25
+$large-font-size: 32px
+$large-font-line-height: 1.25
+$xlarge-font-size: 48px
+$xlarge-font-line-height: 1.05
+
+html
+  font-size: 62.5%
+
+@function parseInt($n)
+  @return $n / ($n * 0 + 1)
+
+@mixin rem($property, $values)
+  $px : ()
+  $rem: ()
+
+  @each $value in $values
+
+    @if ($value == 0 or $value == auto)
+      $px : append($px , $value)
+      $rem: append($rem, $value)
+    @else
+      $unit: unit($value)
+      $val: parseInt($value)
+
+      @if ($unit == "px")
+        $px : append($px,  $value)
+        $rem: append($rem, ($val / 10 + rem))
+      @if ($unit == "rem")
+        $px : append($px,  ($val * 10 + px))
+        $rem: append($rem, $value)
+
+  @if ($px == $rem)
+    #{$property}: $px
+  @else
+    #{$property}: $px
+    #{$property}: $rem
+
+@mixin typeSize($size)
+  @if ($size == "tiny")
+    @include rem(font-size, $tiny-font-size)
+    line-height: $tiny-font-line-height
+  @if ($size == "small")
+    @include rem(font-size, $small-font-size)
+    line-height: $small-font-line-height
+  @if ($size == "base")
+    @include rem(font-size, $base-font-size)
+    line-height: $base-font-line-height
+  @if ($size == "medium")
+    @include rem(font-size, $medium-font-size)
+    line-height: $medium-font-line-height
+  @if ($size == "large")
+    @include rem(font-size, $large-font-size)
+    line-height: $large-font-line-height
+  @if ($size == "xlarge")
+    @include rem(font-size, $xlarge-font-size)
+    line-height: $xlarge-font-line-height
+
+%t-tiny
+  @include typeSize(tiny)
+%t-small
+  @include typeSize(small)
+%t-base
+  @include typeSize(base)
+%t-medium
+  @include typeSize(medium)
+%t-large
+  @include typeSize(large)
+%t-xlarge
+  @include typeSize(xlarge)
