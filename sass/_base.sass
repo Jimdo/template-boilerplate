@@ -3,7 +3,6 @@ $standard-transition: 200ms ease-in
 @import "compass"
 @import "partials/resets"
 @import "partials/font-settings"
-@import "partials/buttons"
 body
 
 h1, h2, h3, h4
@@ -40,9 +39,13 @@ a:focus
   margin: 0 auto
 
 // Import all partials
+@import "partials/buttons"
+
 @import "partials/navigation"
 
-@import "partials/blog"
+@import "partials/blog-post"
+@import "partials/blog-selection"
+@import "partials/blog-datesticker"
 @import "partials/comments"
 
 @import "partials/download"
