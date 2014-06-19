@@ -1,7 +1,7 @@
 Boilerplate for new Jimdo templates
 ====================
 
-With this SASS boilerplate, you can easily develop new tempaltes for Jimdo.
+With this SASS boilerplate, you can easily develop new templates for Jimdo.
 
 # General advice
 
@@ -66,14 +66,4 @@ You can add the ability to change certain parts of your template simply by addin
 
 ##### Siteadmin changes
 
-For new designs, the Design Options panel will also show up in the siteadmin. The user can select variations & variabels here and will be able to save those as a custom setting created for their particular design.
-
-#### Reporting Bugs
-
-Please report all the bugs in the [Jimdo trac system](https://svn.jimdo-server.com/trac/).
-
-There is a user called `template-team-support`. He's happy to receive your reports. Please also file your ticket in the component `Design Marketplace`.
-We will fix bugs consequently and comment + report back.
-The extension is heavily build on javascript. Errors in the developer console will give us hints why a bug occured.
-
-The daily standup takes place at 10:00 A.M. in the template team room (behind the feature team). Go there and ask questions.
+For new designs, the Design Options panel will also show up in the Jimdo siteadmin. The user can select variations & variabels here and will be able to save those as a custom setting created for their particular design.
