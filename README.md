@@ -11,11 +11,11 @@ Most of the partials provide a good basis to code from. Actually, filling the `_
 
 If you wish to use the REM unit, you can do so via
 ```sass
-@include rem()
+@include rem(property, values as px)
 ```
 the function is included in the `_font-settings.sass` and also provides a px fallback. Pretty neat.
 
-To easily build variations, simply alter the variables you already use within the style.sass. It's the fastest way to create variations from the basic setup of the `style.sass`
+To easily build variations, simply alter the variables you already use within the style.sass. It's the fastest way to create variations from the basic setup of the `style.sass` / `base.sass`
 
 If you want to load various webfonts, it's best to do this for all variations etc within the `_base.sass`. Keep in mind that every font means additional load for the template users.
 
@@ -28,7 +28,7 @@ To develop templates within the new template system, you need the Google Chrome 
 ## Installation and Operation
 
 * Download and setup instructions can be found [here](http://live.dmp.jimdo-server.com)
-* Install a small HTTP server like [mongoose](https://code.google.com/p/mongoose/) – [homebrew](http://brew.sh/) is your friend to install it smoothly on your Mac.
+* Install a small HTTP server like [mongoose](https://code.google.com/p/mongoose/) – [homebrew](http://brew.sh/) is your friend to install it smoothly on your Mac. Or [use the already present python HTTP server](http://live.dmp.jimdo-server.com/pages/setup_information).
 
 #### Creating templates
 
@@ -37,7 +37,7 @@ To develop templates within the new template system, you need the Google Chrome 
 3. Replace your content with Jimdo placeholders using whatever editor you prefer
 4. Preview your design with content from different sites. Default site is http://nicecontent.jimdo.com. To get a preview of all possible Jimdo elements, choose http://allcontents.jimdo.com
 5. Make changes, fix any visual problems
-6. ~~Upload your design~~ – :construction: this is currently restricted to the Template Team to avoid random template output :construction:
+6. ~~Upload your design~~ – :construction: this is currently restricted to the Jimdo team to avoid random template output :construction:
 
 ##### Design variations & variables
 
@@ -46,7 +46,7 @@ To develop templates within the new template system, you need the Google Chrome 
 - **Design variables:** User-defined settings that expand/alter a design variation
 
 ##### Design Options
-Design variations and variables appear in a "Design Options" panel overlaying the design. They are started automatically when starting the "DevKit". All valid variations and variables will appear in the small menu on the upper left side of your browser window when starting the extension.
+Design variations and variables appear in a "Design Options" panel overlaying the design. They are started automatically when starting the "DevKit". All valid variations and variables will appear in the small menu on the upper left side of your browser window when starting the extension. Don't worry about strange label names. We'll fix that later – they should already give you a basic idea of what you're altering.
 
 ##### Variations
 
