@@ -4,7 +4,9 @@ $standard-transition: 200ms ease-in
 @import "partials/resets"
 @import "partials/font-settings"
 body
-
+  /*  Ensure that font size is shown correctly. REM unit leads to display problems in Google Chrome. */
+  font-size: 1em
+  
 h1, h2, h3, h4
   font-family: inherit
   margin: 0
