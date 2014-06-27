@@ -20,7 +20,7 @@
 </head>
 <!-- Of course, the HTML code needs to be adjusted to your needs. -->
 <body>
-  <div id="wrap" class="layout-alignment">
+  <div class="layout-alignment">
     <header>
       <nav>
         <div class="navigation-colors">
@@ -32,28 +32,22 @@
         <var>title</var>
       </div>
     </header>
-    <div class="container">
-      <div class="content">
-        <div class="content-options">
-          <var>content</var>
+    <section class="content-options">
+      <var>content</var>
+    </section>
+    <aside>
+      <div class="subnavigation-colors">
+        <div>
+          <var data-level="2:3">navigation</var>
         </div>
       </div>
-      <aside class="sidebar-options">
-        <div class="subnavigation-colors">
-          <div>
-            <var data-level="2:3">navigation</var>
-          </div>
-        </div>
-        <section class="sidebar-options">
-          <var>sidebar</var>
-        </section>
-      </aside>
-      <footer>
-        <div class="footer-options">
-          <var>footer</var>
-        </div>
-      </footer>
-    </div>
+      <section class="sidebar-options">
+        <var>sidebar</var>
+      </section>
+    </aside>
+    <footer class="footer-options">
+      <var>footer</var>
+    </footer>
   </div>
 
 </body>
