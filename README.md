@@ -66,4 +66,6 @@ You can add the ability to change certain parts of your template simply by addin
 
 ##### Siteadmin changes
 
-For new designs, the Design Options panel will also show up in the Jimdo siteadmin. The user can select variations & variabels here and will be able to save those as a custom setting created for their particular design.
+For new designs, the Design Options panel will also show up in the Jimdo siteadmin. The user can select variations & variables here and will be able to save those as a custom setting created for their particular design.
+
+[You can find the complete documentation here](http://live.dmp.jimdo-server.com/pages/customization_information).
