@@ -17,6 +17,16 @@ $xlarge-font-line-height: 1.05
 
 html
   font-size: 62.5%
+  -webkit-text-size-adjust: 100%
+  -ms-text-size-adjust: 100%
+
+body,
+button,
+input,
+select,
+textarea
+  font-size: $base-font-size
+  line-height: $base-font-line-height
 
 @function parseInt($n)
   @return $n / ($n * 0 + 1)
