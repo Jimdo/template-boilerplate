@@ -38,9 +38,12 @@
 // For the actual checkout, the next declarations make sure you see some nice forms
 // If you want to keep your effort small, this is a great preset to work with.
 #cc-checkout-gutter
-  clear: both
+  @extend %clearfix
   .cc-checkout-btn
     @extend %btn-std
+    // right floating button for the next step makes sense. For western countries at least ;)
+    float: right
+    
 
   input[type="text"],
   input[type="email"],
