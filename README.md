@@ -1,5 +1,31 @@
-Boilerplate for new Jimdo templates
-====================
+# Boilerplate for new Jimdo templates
+
+dependencies
+
+- working ruby with bundler (for compass and sass)
+- if you want to use the provided grunt workflow (recommended): node.js
+
+install
+
+- bundle install
+- if you want to use the provided grunt workflow (recommended): npm install
+
+fire up
+
+- if you want to use the provided grunt workflow (recommended): grunt
+- otherwise: server (see below) and sass compile (eg bundle exec compass watch)
+
+
+Why use the Grunt workflow?
+
+- only one command and you're ready to go
+- lints the css. means ...
+
+Why use bundle exec?
+
+- for doc purposes we want to keep sass and compass up to date
+
+---
 
 With this SASS boilerplate, you can easily develop new templates for Jimdo.
 
