@@ -7,16 +7,16 @@ module.exports = function(grunt){
     sass: {
       dist: {
         options: {
-                style: 'expanded',
-                lineNumbers: true,
-                bundleExec: true,
-                compass: true,
-                sourcemap: true
+          style: 'expanded',
+          lineNumbers: true,
+          bundleExec: true,
+          compass: true,
+          sourcemap: true
 
         },
         files: [{
           expand: true,
-          cwd: 'src',
+          cwd: 'sass',
           src: ['**/*.sass'],
           dest: 'css',
           ext: '.css'
@@ -39,7 +39,7 @@ module.exports = function(grunt){
     watch: {
 
       sass: {
-        files: 'src/**/*.sass',
+        files: 'sass/**/*.sass',
         tasks: [
           'sass',
           'csslint:kompilat'
