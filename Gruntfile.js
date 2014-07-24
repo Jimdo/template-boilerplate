@@ -41,8 +41,7 @@ module.exports = function(grunt){
       sass: {
         files: 'sass/**/*.sass',
         tasks: [
-          'sass',
-          'csslint:kompilat'
+          'sass'
           ],
         options: {
         }
@@ -54,7 +53,10 @@ module.exports = function(grunt){
         ],
         options: {
           livereload: true
-        }
+        },
+        tasks: [
+        'csslint:kompilat'
+        ]
       }
     },
 
@@ -78,7 +80,7 @@ module.exports = function(grunt){
     }
   });
 
-  grunt.registerTask('inital_compile', [ 'sass' ]);
+  grunt.registerTask('inital_compile', [ 'sass',  'csslint:kompilat' ]);
   grunt.registerTask('server', [ 'connect:server:keepalive' ]);
   grunt.registerTask('default', [ 'inital_compile', 'concurrent:watch_serve_reload' ]);
 
