@@ -45,7 +45,6 @@ module.exports = function(grunt){
           'csslint:kompilat'
           ],
         options: {
-          debounceDelay: 5000
         }
       },
 
