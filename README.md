@@ -10,8 +10,8 @@ Then you can configure your local enviroment.
 
 ### Dependencies
 
-- for Sass you need to have a working Ruby setup with bundler installed. If you are new to the Ruby world, by all means install a Ruby version manager like rvm (or rbenv) first.
-- the serve-and-compile engine is running Grunt. So you need to have a current version of node.js and the Grunt CLI.
+- for [Sass](http://sass-lang.com/) and [Compass](http://compass-style.org/) you need to have a working [Ruby](https://www.ruby-lang.org/en/) setup with [Bundler](http://bundler.io/) installed. If you are new to the Ruby world, by all means install a Ruby version manager like [RVM](http://rvm.io/) (or [rbenv](http://rbenv.org/)).
+- the serve-and-compile engine is running [Grunt](http://gruntjs.com/). So you need to have a current version of [node.js](http://nodejs.org/).
 
 ### Installation
 
@@ -27,7 +27,7 @@ Copy the follwing commands and paste them into your terminal:
 
 ## CSS Livereload
 
-Install the chrome extension of livereload for more unicorn.
+Install the [Chrome extension](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei) of [LiveReload](http://livereload.com/) for more unicorn.
 
 
 
