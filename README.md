@@ -19,7 +19,7 @@ Copy the follwing commands and paste them into your terminal:
 
     $ bundle install # should install the appropiate versions of Sass and Compass
     $ npm install grunt-cli -g # the Grunt command line interface needs to be installed globally
-    $ npm install # should install Grunt and Grunt tasks for this biolerplate
+    $ npm install # should install Grunt and Grunt tasks for this boilerplate
 
 ## Fire it up
 
