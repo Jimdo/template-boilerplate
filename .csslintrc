@@ -14,7 +14,7 @@
   "font-sizes": false,
   "gradients": false,
   "ids": false,
-  "import": true,
+  "import": false,
   "important": true,
   "known-properties": true,
   "non-link-hover": true,
@@ -30,5 +30,5 @@
   "unique-headings": false,
   "universal-selector": true,
   "unqualified-attributes": true,
-  "zero-units": false
+  "zero-units": true
 }
