@@ -75,7 +75,21 @@ module.exports = function(grunt){
       options: {
         logConcurrentOutput: true
       }
+    },
+
+    // build stuff
+
+    cssmin: {
+      minify: {
+        expand: true,
+        cwd: 'css/',
+        src: ['*.css', '!*.min.css'],
+        dest: 'css/',
+        ext: '.min.css'
+      }
     }
+
+
   });
 
   grunt.registerTask('inital_compile', [ 'sass',  'csslint:kompilat' ]);
@@ -87,4 +101,5 @@ module.exports = function(grunt){
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-concurrent');
   grunt.loadNpmTasks('grunt-contrib-csslint');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
 };
