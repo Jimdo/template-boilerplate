@@ -87,6 +87,16 @@ module.exports = function(grunt){
         dest: 'css/',
         ext: '.min.css'
       }
+    },
+
+    useminPrepare: {
+      html: 'index.html'
+    },
+    usemin: {
+      html: 'index.html',
+      options: {
+        assetsDirs: ['css']
+      }
     }
 
 
@@ -95,6 +105,7 @@ module.exports = function(grunt){
   grunt.registerTask('inital_compile', [ 'sass',  'csslint:kompilat' ]);
   grunt.registerTask('server', [ 'connect:server:keepalive' ]);
   grunt.registerTask('default', [ 'inital_compile', 'concurrent:watch_serve_reload' ]);
+  grunt.registerTask('build', [ 'inital_compile', 'cssmin', 'usemin' ]);
 
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-sass');
@@ -102,4 +113,5 @@ module.exports = function(grunt){
   grunt.loadNpmTasks('grunt-concurrent');
   grunt.loadNpmTasks('grunt-contrib-csslint');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-usemin');
 };
