@@ -29,6 +29,6 @@
   "vendor-prefix": true,
   "unique-headings": false,
   "universal-selector": true,
-  "unqualified-attributes": true,
+  "unqualified-attributes": false,
   "zero-units": true
 }
