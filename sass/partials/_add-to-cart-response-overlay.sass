@@ -1,4 +1,15 @@
+// add-to-cart modal styling. Not all classes need styling, listed here for complete documentation of classes.
+
 .j-shop-addtocard-response
+
+  // link back to website, closes modal
+  .j-shop-addtocard-response--backward
+    @extend %btn-std
+
+  // link to checkout
+  .j-shop-addtocard-response--forward
+    @extend %btn-shop
+
   .j-shop-addtocard-response--message
   .j-shop-addtocard-response--item
     .j-shop-addtocard-response--item-image
@@ -7,5 +18,3 @@
       .j-shop-addtocard-response--item--variant
       .j-shop-addtocard-response--item-price
   .j-shop-addtocard-response--actions
-    .j-shop-addtocard-response--backward
-    .j-shop-addtocard-response--forward
