@@ -4,6 +4,7 @@
 // For the checkout steps, these are some helpful classes to get the general
 // checkout bar styling done. Feel free to throw in some colors here.
 #cc-checkout-steps
+  @extend %cf
   list-style-type: none
   margin: 1em 0
   padding: 0
@@ -38,12 +39,12 @@
 // For the actual checkout, the next declarations make sure you see some nice forms
 // If you want to keep your effort small, this is a great preset to work with.
 #cc-checkout-gutter
-  @extend %clearfix
+  @extend %cf
   .cc-checkout-btn
     @extend %btn-std
     // right floating button for the next step makes sense. For western countries at least ;)
     float: right
-    
+
 
   input[type="text"],
   input[type="email"],
@@ -58,9 +59,10 @@
     margin-bottom: 1em
 
 // Subheadings of the checkout steps including the links to change stuff.
+// Watch out: These are legend tags within a fieldset – so inline elements instead of classic headings.
 .cc-checkout-subheadings
   @extend %t-medium
-  margin: 1em 0 0.5em
+  padding: 1em 0 0.5em
   a
     @extend %t-small
 
