@@ -51,7 +51,7 @@ For compilation, adjust the settings in the `config.rb` to whatever you're comfo
 
 ## Creating templates
 
-1. Open your design in Chrome (`grunt` should have done so at [0.0.0.0:3000](http://0.0.0.0:3000/)) and start the devkit via the little extension icon on the top right. The devkit will open in the browser now.
+1. Open your design in Chrome (`grunt` should have done so at [0.0.0.0:8080](http://0.0.0.0:8080/)) and start the devkit via the little extension icon on the top right. The devkit will open in the browser now.
 2. Set up [Variations and Variables](#design-variations--variables) for your design by specifying them via style tags (variations) and CSS classes (variables). You can preview the variations and variable settings while developing the design. Add one, reload the page and it will appear in the left hand menu.
 3. Replace your content with Jimdo placeholders using whatever editor you prefer
 4. Preview your design with content from different sites. Default site is http://nicecontent.jimdo.com. To get a preview of all possible Jimdo elements, choose http://allcontents.jimdo.com
