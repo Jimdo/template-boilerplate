@@ -24,14 +24,27 @@ module.exports = function(grunt){
       }
     },
 
+    cssmin: {
+      my_target: {
+        files: [{
+          expand: true,
+          cwd: 'css',
+          src: ['*.css', '!*.min.css'],
+          dest: 'css',
+          ext: '.min.css'
+        }]
+      }
+    },
+
     csslint: {
       kompilat: {
         options: {
           csslintrc: '.csslintrc'
         },
         src: [
-          'css/**/*.css'
-          ]
+          'css/**/*.css',
+          '!css/**/*.min.css'
+        ]
       }
     },
 
@@ -53,6 +66,7 @@ module.exports = function(grunt){
           livereload: true
         },
         tasks: [
+        'cssmin',
         'csslint:kompilat'
         ]
       }
@@ -78,7 +92,7 @@ module.exports = function(grunt){
     }
   });
 
-  grunt.registerTask('inital_compile', [ 'sass',  'csslint:kompilat' ]);
+  grunt.registerTask('inital_compile', [ 'sass',  'csslint:kompilat', 'cssmin' ]);
   grunt.registerTask('server', [ 'connect:server:keepalive' ]);
   grunt.registerTask('default', [ 'inital_compile', 'concurrent:watch_serve_reload' ]);
 
@@ -87,4 +101,5 @@ module.exports = function(grunt){
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-concurrent');
   grunt.loadNpmTasks('grunt-contrib-csslint');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
 };
