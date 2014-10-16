@@ -5,3 +5,4 @@ build/
 .sass-cache/
 bower_components/**/*
 *.map
+**/.idea
