@@ -43,7 +43,7 @@ If you wish to use the REM unit, you can do so via
 ```
 the function is included in the `_font-settings.sass` and also provides a px fallback. Pretty neat.
 
-To easily build variations, simply alter the variables you already use within the style.sass. It's the fastest way to create variations from the basic setup of the `style.sass` / `base.sass`
+To easily build variations, simply alter the variables you already use within the style.sass. It's the fastest way to create variations from the basic setup of the `style.sass` / `_base.sass`
 
 If you want to load various webfonts, it's best to do this for all variations etc within the `_base.sass`. Keep in mind that every font means additional load for the template users.
 
@@ -55,7 +55,7 @@ To provide easier handling of templates and a unified approach towards coding te
 
 * Only use CSS classes, no IDs in your template.
 * Write your HTML as slim as possible. No extra `div`s if not necessary. Remember `:before` and `:after`, they are really helpful to avoid unnecessary markup.
-* **Each** class begins with `jtpl-`
+* **Each** class begins with `jtpl-` – of course except for the classes that provide functionality for the user (like `content-options` or `navigation-colors`)
 * The second part is the identifier for the block you're using:
 * `jtpl-header`
 * `jtpl-content`
@@ -72,7 +72,7 @@ To provide easier handling of templates and a unified approach towards coding te
 1. Open your design in Chrome (`grunt` should have done so at [0.0.0.0:8080](http://0.0.0.0:8080/)) and start the devkit via the little extension icon on the top right. The devkit will open in the browser now.
 2. Set up [Variations and Variables](#design-variations--variables) for your design by specifying them via style tags (variations) and CSS classes (variables). You can preview the variations and variable settings while developing the design. Add one, reload the page and it will appear in the left hand menu.
 3. Replace your content with Jimdo placeholders using whatever editor you prefer
-4. Preview your design with content from different sites. Default site is http://nicecontent.jimdo.com. To get a preview of all possible Jimdo elements, choose http://allcontents.jimdo.com
+4. Preview your design with content from different Jimdo sites. Default site is http://nicecontent.jimdo.com. To get a preview of all possible Jimdo elements, choose http://allcontents.jimdo.com
 5. Make changes, fix any visual problems
 6. ~~Upload your design~~ – :construction: this is currently restricted to the Jimdo team to avoid random template output :construction:
 
@@ -105,7 +105,7 @@ You can add the ability to change certain parts of your template simply by addin
 
 For new designs, the Design Options panel will also show up in the Jimdo siteadmin. The user can select variations & variables here and will be able to save those as a custom setting created for their particular design.
 
-[You can find the complete documentation here](http://live.dmp.jimdo-server.com/pages/customization_information).
+[You can find the complete documentation here](http://live.dmp.jimdo-server.com/).
 
 ---
 
