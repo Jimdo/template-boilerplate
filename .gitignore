@@ -6,4 +6,4 @@ build/
 bower_components/**/*
 *.map
 **/.idea
-css/
+.dist/

@@ -3,7 +3,7 @@
 %btn-std
   background-color: transparent
   border: 0
-  +box-sizing(border-box)
+  box-sizing: border-box
   color: inherit
   cursor: pointer
   display: inline-block
@@ -16,7 +16,7 @@
   text-decoration: none
   // For the transitions it's helpful to provide a $standard-transition variable
   // spread throughout the files to keep transitions in line. It's in the _base.sass
-  +transition(background-color $standard-transition)
+  transition: background-color $standard-transition
   &:hover,
   &:active,
   &:focus
@@ -36,12 +36,12 @@
 %input-std
   background-color: inherit
   border: 0
-  +box-sizing(border-box)
+  box-sizing: border-box
   color: inherit
   font-family: inherit
   @extend %t-base
   padding: 0
-  +transition(border-color $standard-transition)
+  transition: border-color $standard-transition
   &:hover,
   &:focus,
   &:active
