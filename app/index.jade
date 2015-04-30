@@ -1,4 +1,22 @@
-extends layout/layout.jade
+extends layout/base.jade
 
-block content
-  include components/content.jade
+block content 
+  .layout-alignment
+    header
+      nav
+        .navigation-colors
+          var(data-level='1') navigation
+      div
+        var(max-height='200') logo
+        var title
+    section.content-options
+      var content
+    aside
+      .subnavigation-colors
+        div
+          var(data-level='2:3') navigation
+
+      section.sidebar-options
+        var sidebar
+    footer.footer-options
+      var footer
