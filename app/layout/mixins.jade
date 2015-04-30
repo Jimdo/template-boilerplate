@@ -8,3 +8,14 @@
 
 mixin variation(name, file, color)
   link(rel='stylesheet-variation', data-name=name, href=file, data-icon=color)
+
+
+
+//- Add meta-tag with name and content attribute
+//-
+//- @param name      -   set the name
+//- @param content   -   set the content
+
+
+mixin meta(name, content)
+  meta(name=name, content=content)

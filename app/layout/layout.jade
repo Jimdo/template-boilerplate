@@ -5,23 +5,22 @@ doctype html
 html
   head
     //- Template Name
-    meta(name='devkit.template-name', content=name)
+    +meta('devkit.template-name', name)
     //- The templates version – versioning is done via Semantic Versioning, see semver.org for more info. Patch level updates are pushed to the user without any further action necessary. Major and minor updates require the user to reselect the template.
-    meta(name='jimdo.version', content=version)
+    +meta('jimdo.version', version)
+    //- Please provide the main color for the basic style.css as you do with variations.
+    +meta('jimdo.color', color)
+    //- This en or disabled the awesomebgs
+    +meta('jimdo.ownbg.allowed', ownbackground)
+    //- You can disable styles for single Jimdo modules by adding them here.
+    //- In this case, the comments and the product module styles are not loaded
+    //- For a list of available modules check the documentation or the body tag in the preview.
+    +meta('jimdo.styles.disabled', disabled_styles)
+    
     //- Main CSS File 
     link(href=maincss, rel='stylesheet')
     //- This is how you link a variation
     include variations.jade 
-    
-    //- Please provide the main color for the basic style.css as you do with variations.
-    meta(name='jimdo.color', content=color)
-    //- This en or disabled the awesomebgs
-    meta(name='jimdo.ownbg.allowed', content=ownbackground)
-    //- You can disable styles for single Jimdo modules by adding them here.
-    //- In this case, the comments and the product module styles are not loaded
-    //- For a list of available modules check the documentation or the body tag in the preview.
-    meta(name='jimdo.styles.disabled', content=disabled_styles)
-    
     
   //- Of course, the HTML code needs to be adjusted to your needs.
   body
