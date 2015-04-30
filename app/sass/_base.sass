@@ -1,5 +1,9 @@
 $standard-transition: 200ms ease-in
 
+// ####################
+// Import config stuff
+// ####################
+
 @import "partials/resets"
 @import "partials/helpers"
 @import "partials/font-settings"
@@ -36,24 +40,30 @@ a:visited
 .layout-alignment
   margin: 0 auto
 
-// Import all partials
+
+
+// ####################
+// Import module stylings
+// ####################
+
+@import "modules/blog"
+@import "modules/comments"
+@import "modules/download"
+@import "modules/form"
+@import "modules/hr"
+@import "modules/newsletter"
+@import "modules/rss"
+@import "modules/product"
+
+
+
+// ####################
+// Import miscellaneous stuff
+// ####################
+
 @import "partials/buttons"
-
 @import "partials/navigation"
-
-@import "partials/blog-post"
-@import "partials/blog-selection"
-@import "partials/blog-datesticker"
-@import "partials/comments"
-
-@import "partials/download"
-@import "partials/form"
-@import "partials/hr"
-@import "partials/newsletter"
 @import "partials/password-page"
-@import "partials/rss"
-
-@import "partials/product"
 @import "partials/shop-checkout"
 @import "partials/shopping-cart"
 @import "partials/add-to-cart-response-overlay"

@@ -1,0 +1,48 @@
+// ####################
+// Blog Selection
+// ####################
+
+.j-blogarticle
+  a:link,
+  a:visited
+    h2
+
+.blogreadmore,
+.comment
+  &:link,
+  &:visited
+    @extend %btn-std
+
+
+
+// ####################
+// Blog post
+// ####################
+
+.j-blog
+
+// Blog post header including headline, datesticker (see other file) and tags
+.j-blog-meta
+  @extend %cf
+  a:link,
+  a:visited
+
+  .j-blog-header
+
+.skiptoform
+  a:link,
+  a:visited
+    @extend %btn-std
+
+// The blogpost's tags
+.postmeta
+
+
+
+// ####################
+// Datesticker
+// ####################
+
+.datetime
+  //the different date items (day, name of the day, month, year)
+  span
