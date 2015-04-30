@@ -1,0 +1,10 @@
+//- Add link-tag to meta to load the variation files
+//-
+//- @param name   -   set the name of the variation
+//- @param file   -   set the file link
+//- @param color  -   set the data icon color, used in the Jimdo app as a  
+//-                   bullet to differentiate the variations
+
+
+mixin variation(name, file, color)
+  link(rel='stylesheet-variation', data-name=name, href=file, data-icon=color)
