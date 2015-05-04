@@ -28,7 +28,7 @@ var config = {
   },
 
   files: {
-    index: 'index.html',
+    index: 'index',
     config: 'template'
   },
 
@@ -70,7 +70,7 @@ gulp.task('cleanTMP', function() {
 * @require: compiled template-CSON file in JSON
 */
 gulp.task('renderHTML', ['compileCSON'], function() {
-  return gulp.src(config.folders.base + '*.jade')
+  return gulp.src(config.folders.base + config.files.index + '.jade')
     .pipe(data(function(file) {
       return JSON.parse(fs.readFileSync(config.folders.tmp + config.files.config + '.json'));
     }))
