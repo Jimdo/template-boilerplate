@@ -15,6 +15,7 @@ var fs                  = require('fs');
 var cson                = require('gulp-cson');
 
 
+
 /**
 * Set all basic informations
 */
@@ -41,31 +42,34 @@ var config = {
   }
 }
 
+
+
 /**
-* Clean up .dist folder
+* Clean up dist folder
 */
-gulp.task('clean', function() {
+gulp.task('cleanDist', function() {
   return gulp.src(config.folders.dist)
     .pipe(clean());
 });
 
 
+
 /**
-* Compile Jade to HTML
-* Minify code for production
+* Clean up tmp folder
 */
-gulp.task('production-html', function() {
-  return gulp.src(config.folders.base + '*.jade')
-    .pipe(jade({pretty: true}))
-    .pipe(minifyHTML())
-    .pipe(gulp.dest(config.folders.dist));
+gulp.task('cleanTMP', function() {
+  return gulp.src(config.folders.tmp)
+    .pipe(clean());
 });
 
 
+
 /**
-* Compile Jade to HTML for localhost connect
+* Compile Jade to HTML
+*
+* @require: compiled template-CSON file in JSON
 */
-gulp.task('dev-html', ['compileCSON'], function() {
+gulp.task('renderHTML', ['compileCSON'], function() {
   return gulp.src(config.folders.base + '*.jade')
     .pipe(data(function(file) {
       return JSON.parse(fs.readFileSync(config.folders.tmp + config.files.config + '.json'));
@@ -77,21 +81,21 @@ gulp.task('dev-html', ['compileCSON'], function() {
 
 
 /**
-* Compile CSON to JSON
+* Compile template-CSON to JSON
 */
 gulp.task('compileCSON', function() {
   return gulp.src(config.folders.base + config.files.config + '.cson')
     .pipe(cson())
-    .pipe(gulp.dest(config.folders.tmp))
+    .pipe(gulp.dest(config.folders.tmp));
 });
 
 
+
 /**
-* Compile Sass Code and concat to application.css
-* Autoprefixer
-* Building process
+* Render Css Code with
+* Autoprefixer and Minifier
 */
-gulp.task('production-css', function() {
+gulp.task('renderCSS', function() {
   return sass(config.folders.base + '/sass/')
     .on('error', function (err) {
       console.error('Error!', err.message);
@@ -102,58 +106,10 @@ gulp.task('production-css', function() {
       remove: true
     }))
     .pipe(minifyCSS())
-    .pipe(gulp.dest(config.folders.dist + 'css/'));
-});
-
-
-/**
-* Compile Sass Code and concat to application.css
-* Autoprefixer
-* Server process
-*/
-gulp.task('dev-css', function() {
-  return sass(config.folders.base + '/sass/')
-    .on('error', function (err) {
-      console.error('Error!', err.message);
-    })
-    .pipe(autoprefixer({
-      browsers: config.sass.autoprefixer,
-      cascade: false,
-      remove: true
-    }))
     .pipe(gulp.dest(config.folders.dist + '/css/'))
     .pipe(connect.reload());
 });
 
-
-
-/**
- * Build all stuff for localhost connect
- */
-gulp.task('dev', function(callback) {
- runSequence('clean',
-             'dev-html',
-             'dev-css',
-             'connect',
-             'open-browser',
-             'watch',
-             callback);
-});
-
-
-
-/**
- * Build all stuff for localhost connect
- */
-gulp.task('production', function(callback) {
- runSequence('clean',
-             'production-html',
-             'production-css',
-             'connect',
-             'open-browser',
-             'watch',
-             callback);
-});
 
 
 /**
@@ -168,6 +124,7 @@ gulp.task('open-browser', function(){
 });
 
 
+
 /**
  * Start Connection to local server
  */
@@ -180,17 +137,35 @@ gulp.task('connect', function() {
 });
 
 
+
 /**
  * Watcher
  */
 gulp.task('watch', function () {
-  gulp.watch([config.folders.base + '/**/*.jade'], ['dev-html']);
-  gulp.watch([config.folders.base + '/sass/**/*.sass'], ['dev-css']);
-  gulp.watch([config.folders.base + '/' + config.files.config + '.cson'], ['dev-html']);
+  gulp.watch([config.folders.base + '/**/*.jade'], ['renderHTML']);
+  gulp.watch([config.folders.base + '/sass/**/*.sass'], ['renderCSS']);
+  gulp.watch([config.folders.base + '/' + config.files.config + '.cson'], ['renderHTML']);
 });
+
+
+
+/**
+ * Build all stuff for localhost connect
+ */
+gulp.task('build', function(callback) {
+ runSequence('cleanDist',
+             'cleanTMP',
+             'renderHTML',
+             'renderCSS',
+             'connect',
+             'open-browser',
+             'watch',
+             callback);
+});
+
 
 
 /**
 * Default Task
 */
-gulp.task('default', ['dev']);
+gulp.task('default', ['build']);
