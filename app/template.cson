@@ -1,17 +1,56 @@
 #####################
 # Template Meta Data
+#
+# This meta data will include to the head area of the template.
+# Add a meta data our adjust the jimdo basics.
+#
 ####################
 
-name:                              "Boilerplate"
-version:                           "0.1.0"
-maincss:                           "css/style.min.css"
-color:                             "#0099ee"
-ownbackground:                     "yes"
-disabled_styles:                   "m-comment m-product"
+meta:
+
+  # Template Name
+  "devkit.template-name": "Boilerplate"
+
+  # The templates version – versioning is done via Semantic Versioning,
+  # see semver.org for more info. Patch level updates are pushed to the user
+  # without any further action necessary. Major and minor updates require the
+  # user to reselect the template.
+  "jimdo.version": "0.1.0"
+
+  # Please provide the main color for the basic style.css as you do with variations.
+  "jimdo.color": "#0099ee"
+
+  # This en or disabled the awesomebgs
+  "jimdo.ownbg.allowed": "yes"
+
+  # You can disable styles for single Jimdo modules by adding them here.
+  # In this case, the comments and the product module styles are not loaded
+  # For a list of available modules check the documentation or the body tag in the preview.
+  "jimdo.styles.disabled": "m-comment m-product"
+
+
+
+#####################
+# Path for the maintenance rendered css file
+####################
+
+maincss: "css/style.min.css"
+
 
 
 #####################
 # Variations
+#
+# Add your variarions here. Every variation object need a variation name, a link
+# to the rendered css file and a icon color.
+#
+# Example:
+#
+# reverse:
+#   name: "Reverse"
+#   link: "css/variation.min.css"
+#   color: "#2f2f2f"
+#
 ####################
 
 variations:
@@ -31,5 +70,11 @@ variations:
   # Light
   light:
     name: "Light"
+    link: "css/variation.min.css"
+    color: "#2f2f2f"
+
+  # Light
+  dark:
+    name: "Dark"
     link: "css/variation.min.css"
     color: "#2f2f2f"
