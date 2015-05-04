@@ -1,25 +1,15 @@
-include config.jade 
 include mixins.jade 
 
 doctype html
 html
   head
-    //- Template Name
-    +meta('devkit.template-name', name)
-    //- The templates version – versioning is done via Semantic Versioning, see semver.org for more info. Patch level updates are pushed to the user without any further action necessary. Major and minor updates require the user to reselect the template.
-    +meta('jimdo.version', version)
-    //- Please provide the main color for the basic style.css as you do with variations.
-    +meta('jimdo.color', color)
-    //- This en or disabled the awesomebgs
-    +meta('jimdo.ownbg.allowed', ownbackground)
-    //- You can disable styles for single Jimdo modules by adding them here.
-    //- In this case, the comments and the product module styles are not loaded
-    //- For a list of available modules check the documentation or the body tag in the preview.
-    +meta('jimdo.styles.disabled', disabled_styles)
+    //- Include meta data 
+    include meta.jade 
     
     //- Main CSS File 
     link(href=maincss, rel='stylesheet')
-    //- This is how you link a variation
+    
+    //- Include Variation CSS Files
     include variations.jade 
     
   //- Of course, the HTML code needs to be adjusted to your needs.

@@ -28,7 +28,7 @@ variations:
     link: "css/variation.min.css"
     color: "#2f2f2f"
 
-  # Light  
+  # Light
   light:
     name: "Light"
     link: "css/variation.min.css"
