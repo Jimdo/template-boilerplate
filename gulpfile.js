@@ -39,7 +39,15 @@ gulp.task('production-html', function() {
 */
 gulp.task('dev-html', function() {
   return gulp.src('./app/*.jade')
-    .pipe(jade({pretty: true}))
+    .pipe(jade({
+      data: {
+        title: 'About Me',
+        name: 'Michael Coleman', // use your own name, this one is mine :P
+        portrait: 'url to a pic of you', // more on this in a bit
+        github: 'https://github.com/Coalman', // use your own github url
+        email: 'your email address'
+      }
+    }))
     .pipe(gulp.dest('./.dist/'))
     .pipe(connect.reload());
 });
