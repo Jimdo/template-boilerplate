@@ -16,10 +16,36 @@ var cson                = require('gulp-cson');
 
 
 /**
+* Set all basic informations
+*/
+var config = {
+
+  folders: {
+    base: './app/',
+    dist: './.dist/',
+    tmp: './.tmp/'
+  },
+
+  files: {
+    index: 'index.html',
+    config: 'template'
+  },
+
+  connection: {
+    port: 9000,
+    livereload: false
+  },
+
+  sass: {
+    autoprefixer: ['last 3 versions']
+  }
+}
+
+/**
 * Clean up .dist folder
 */
 gulp.task('clean', function() {
-  return gulp.src('./.dist/')
+  return gulp.src(config.folders.dist)
     .pipe(clean());
 });
 
@@ -29,10 +55,10 @@ gulp.task('clean', function() {
 * Minify code for production
 */
 gulp.task('production-html', function() {
-  return gulp.src('./app/*.jade')
+  return gulp.src(config.folders.base + '*.jade')
     .pipe(jade({pretty: true}))
     .pipe(minifyHTML())
-    .pipe(gulp.dest('./.dist/'));
+    .pipe(gulp.dest(config.folders.dist));
 });
 
 
@@ -40,12 +66,12 @@ gulp.task('production-html', function() {
 * Compile Jade to HTML for localhost connect
 */
 gulp.task('dev-html', ['compileCSON'], function() {
-  return gulp.src('./app/*.jade')
+  return gulp.src(config.folders.base + '*.jade')
     .pipe(data(function(file) {
-      return JSON.parse(fs.readFileSync('./.tmp/template.json'));
+      return JSON.parse(fs.readFileSync(config.folders.tmp + config.files.config + '.json'));
     }))
     .pipe(jade())
-    .pipe(gulp.dest('./.dist/'))
+    .pipe(gulp.dest(config.folders.dist))
     .pipe(connect.reload());
 });
 
@@ -54,9 +80,9 @@ gulp.task('dev-html', ['compileCSON'], function() {
 * Compile CSON to JSON
 */
 gulp.task('compileCSON', function() {
-  return gulp.src('./app/template.cson')
+  return gulp.src(config.folders.base + config.files.config + '.cson')
     .pipe(cson())
-    .pipe(gulp.dest('./.tmp/'))
+    .pipe(gulp.dest(config.folders.tmp))
 });
 
 
@@ -66,17 +92,17 @@ gulp.task('compileCSON', function() {
 * Building process
 */
 gulp.task('production-css', function() {
-  return sass('./app/sass/')
+  return sass(config.folders.base + '/sass/')
     .on('error', function (err) {
       console.error('Error!', err.message);
     })
     .pipe(autoprefixer({
-      browsers: ['last 3 versions'],
+      browsers: config.sass.autoprefixer,
       cascade: false,
       remove: true
     }))
     .pipe(minifyCSS())
-    .pipe(gulp.dest('./.dist/css/'));
+    .pipe(gulp.dest(config.folders.dist + 'css/'));
 });
 
 
@@ -86,16 +112,16 @@ gulp.task('production-css', function() {
 * Server process
 */
 gulp.task('dev-css', function() {
-  return sass('./app/sass/')
+  return sass(config.folders.base + '/sass/')
     .on('error', function (err) {
       console.error('Error!', err.message);
     })
     .pipe(autoprefixer({
-      browsers: ['last 3 versions'],
+      browsers: config.sass.autoprefixer,
       cascade: false,
       remove: true
     }))
-    .pipe(gulp.dest('./.dist/css/'))
+    .pipe(gulp.dest(config.folders.dist + '/css/'))
     .pipe(connect.reload());
 });
 
@@ -135,9 +161,9 @@ gulp.task('production', function(callback) {
 */
 gulp.task('open-browser', function(){
   var options = {
-    url: 'http://localhost:9000'
+    url: 'http://localhost:' + config.connection.port
   };
-  gulp.src('./.dist/index.html')
+  gulp.src(config.folders.dist + '/index.html')
     .pipe(open('', options));
 });
 
@@ -147,9 +173,9 @@ gulp.task('open-browser', function(){
  */
 gulp.task('connect', function() {
  return connect.server({
-   root: ['.dist'],
-   port: 9000,
-   livereload: true
+   root: [config.folders.dist],
+   port: config.connection.port,
+   livereload: config.connection.livereload
  });
 });
 
@@ -158,9 +184,9 @@ gulp.task('connect', function() {
  * Watcher
  */
 gulp.task('watch', function () {
-  gulp.watch(['./app/**/*.jade'], ['dev-html']);
-  gulp.watch(['./app/sass/**/*.sass'], ['dev-css']);
-  gulp.watch(['./app/template.cson'], ['dev-html']);
+  gulp.watch([config.folders.base + '/**/*.jade'], ['dev-html']);
+  gulp.watch([config.folders.base + '/sass/**/*.sass'], ['dev-css']);
+  gulp.watch([config.folders.base + '/' + config.files.config + '.cson'], ['dev-html']);
 });
 
 
