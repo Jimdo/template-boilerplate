@@ -1,0 +1,12 @@
+{
+  "name": "template-boilerplate",
+  "version": "0.0.0",
+  "homepage": "https://github.com/Jimdo/template-boilerplate",
+  "authors": [
+    "jimdo/template-design"
+  ],
+  "license": "none",
+  "dependencies": {
+    "template-lib": "git@github.com:Jimdo/template-lib.git#~0.0.0"
+  }
+}
