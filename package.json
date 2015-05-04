@@ -1,17 +1,16 @@
 {
-  "name": "template2016",
+  "name": "template-boilerplate",
   "version": "1.0.0",
-  "description": "Vision template of Jimdo 2016.",
-  "main": "index.html",
+  "description": "Jimdo template boilerplate",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Jimdo/template-2016.git"
+    "url": "https://github.com/Jimdo/template-boilerplate.git"
   },
-  "author": "Template Design Team Jimdo",
+  "author": "jimdo/template-design",
   "bugs": {
-    "url": "https://github.com/Jimdo/template-2016/issues"
+    "url": "https://github.com/Jimdo/template-boilerplate/issues"
   },
-  "homepage": "https://github.com/Jimdo/template-2016",
+  "homepage": "https://github.com/Jimdo/template-boilerplate",
   "devDependencies": {
     "fs": "0.0.2",
     "gulp": "^3.8.11",
