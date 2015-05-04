@@ -1,16 +1,24 @@
 $standard-transition: 200ms ease-in
 
 // ####################
+// Import template-lib
+// ####################
+
+@import "../../bower_components/template-lib/sasslib/base"
+
+
+// ####################
 // Import config stuff
 // ####################
 
-@import "base/resets"
+@import "base/reset"
 @import "partials/helpers"
 @import "partials/font-settings"
 
 h1, h2, h3, h4
   font-family: inherit
   margin: 0
+  +cf
 
 h1
   @extend %t-xlarge
