@@ -10,7 +10,8 @@ var runSequence         = require('run-sequence');
 var sass                = require('gulp-ruby-sass');
 var autoprefixer        = require('gulp-autoprefixer');
 var sourcemaps          = require('gulp-sourcemaps');
-
+var data                = require('gulp-data');
+var fs                  = require('fs');
 
 
 /**
@@ -39,15 +40,10 @@ gulp.task('production-html', function() {
 */
 gulp.task('dev-html', function() {
   return gulp.src('./app/*.jade')
-    .pipe(jade({
-      data: {
-        title: 'About Me',
-        name: 'Michael Coleman', // use your own name, this one is mine :P
-        portrait: 'url to a pic of you', // more on this in a bit
-        github: 'https://github.com/Coalman', // use your own github url
-        email: 'your email address'
-      }
+    .pipe(data(function(file) {
+      return JSON.parse(fs.readFileSync('./app/template.json'));
     }))
+    .pipe(jade())
     .pipe(gulp.dest('./.dist/'))
     .pipe(connect.reload());
 });
@@ -153,6 +149,7 @@ gulp.task('connect', function() {
 gulp.task('watch', function () {
   gulp.watch(['./app/**/*.jade'], ['dev-html']);
   gulp.watch(['./app/sass/**/*.sass'], ['dev-css']);
+  gulp.watch(['./app/template.json'], ['dev-html']);
 });
 
 
