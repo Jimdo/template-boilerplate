@@ -3,7 +3,6 @@
 #
 # This meta data will include to the head area of the template.
 # Add a meta data our adjust the jimdo basics.
-#
 ####################
 
 meta:
@@ -29,13 +28,11 @@ meta:
   "jimdo.styles.disabled": "m-comment m-product"
 
 
-
 #####################
 # Path for the maintenance rendered css file
 ####################
 
 maincss: "css/style.min.css"
-
 
 
 #####################
