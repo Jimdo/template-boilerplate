@@ -1,0 +1,35 @@
+#####################
+# Template Meta Data
+####################
+
+name:                              "Boilerplate"
+version:                           "0.1.0"
+maincss:                           "css/style.min.css"
+color:                             "#0099ee"
+ownbackground:                     "yes"
+disabled_styles:                   "m-comment m-product"
+
+
+#####################
+# Variations
+####################
+
+variations:
+
+  # Reverse
+  reverse:
+    name: "Reverse"
+    link: "css/variation.min.css"
+    color: "#2f2f2f"
+
+  # Saturated
+  saturated:
+    name: "Saturated"
+    link: "css/variation.min.css"
+    color: "#2f2f2f"
+
+  # Light  
+  light:
+    name: "Light"
+    link: "css/variation.min.css"
+    color: "#2f2f2f"

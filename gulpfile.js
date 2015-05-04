@@ -12,6 +12,7 @@ var autoprefixer        = require('gulp-autoprefixer');
 var sourcemaps          = require('gulp-sourcemaps');
 var data                = require('gulp-data');
 var fs                  = require('fs');
+var cson                = require('gulp-cson');
 
 
 /**
@@ -38,14 +39,24 @@ gulp.task('production-html', function() {
 /**
 * Compile Jade to HTML for localhost connect
 */
-gulp.task('dev-html', function() {
+gulp.task('dev-html', ['compileCSON'], function() {
   return gulp.src('./app/*.jade')
     .pipe(data(function(file) {
-      return JSON.parse(fs.readFileSync('./app/template.json'));
+      return JSON.parse(fs.readFileSync('./.tmp/template.json'));
     }))
     .pipe(jade())
     .pipe(gulp.dest('./.dist/'))
     .pipe(connect.reload());
+});
+
+
+/**
+* Compile CSON to JSON
+*/
+gulp.task('compileCSON', function() {
+  return gulp.src('./app/template.cson')
+    .pipe(cson())
+    .pipe(gulp.dest('./.tmp/'))
 });
 
 
@@ -149,7 +160,7 @@ gulp.task('connect', function() {
 gulp.task('watch', function () {
   gulp.watch(['./app/**/*.jade'], ['dev-html']);
   gulp.watch(['./app/sass/**/*.sass'], ['dev-css']);
-  gulp.watch(['./app/template.json'], ['dev-html']);
+  gulp.watch(['./app/template.cson'], ['dev-html']);
 });
 
 
