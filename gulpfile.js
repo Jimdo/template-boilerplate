@@ -13,6 +13,8 @@ var sourcemaps          = require('gulp-sourcemaps');
 var data                = require('gulp-data');
 var fs                  = require('fs');
 var cson                = require('gulp-cson');
+var rename              = require('gulp-rename');
+var gulpif              = require('gulp-if');
 
 
 
@@ -38,7 +40,8 @@ var config = {
   },
 
   sass: {
-    autoprefixer: ['last 3 versions']
+    autoprefixer: ['last 3 versions'],
+    minified: true
   }
 }
 
@@ -105,7 +108,8 @@ gulp.task('renderCSS', function() {
       cascade: false,
       remove: true
     }))
-    .pipe(minifyCSS())
+    .pipe(gulpif(config.sass.minified, minifyCSS()))
+    .pipe(gulpif(config.sass.minified, rename({suffix: ".min"})))
     .pipe(gulp.dest(config.folders.dist + '/css/'))
     .pipe(connect.reload());
 });
