@@ -4,7 +4,7 @@
 // For the checkout steps, these are some helpful classes to get the general
 // checkout bar styling done. Feel free to throw in some colors here.
 #cc-checkout-steps
-  @extend %cf
+  +cf
   list-style-type: none
   margin: 1em 0
   padding: 0
@@ -39,7 +39,7 @@
 // For the actual checkout, the next declarations make sure you see some nice forms
 // If you want to keep your effort small, this is a great preset to work with.
 #cc-checkout-gutter
-  @extend %cf
+  +cf
   .cc-checkout-btn
     @extend %btn-std
     // right floating button for the next step makes sense. For western countries at least ;)
@@ -61,10 +61,10 @@
 // Subheadings of the checkout steps including the links to change stuff.
 // Watch out: These are legend tags within a fieldset, so inline elements instead of classic headings.
 .cc-checkout-subheadings
-  @extend %t-medium
+  // @extend %t-medium
   padding: 1em 0 0.5em
   a
-    @extend %t-small
+    // @extend %t-small
 
 // Display the total sum of the purchase bold
 .cc-checkout-total
@@ -90,7 +90,7 @@
 
 // small print at the bottom of the checkout table should be small
 .cc-checkout-hint
-  @extend %t-small
+  // @extend %t-small
 
 // You probably want that checkbox aligned to the right side of the checkout.
 .cc-checkout-shipping-address-checker

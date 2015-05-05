@@ -12,20 +12,43 @@ $standard-transition: 200ms ease-in
 // ####################
 
 @import "base/reset"
-@import "partials/helpers"
-@import "partials/font-settings"
+@import "base/font"
+
+
+// ####################
+// General REM Font settings
+// ####################
+
+html
+  font-size: 62.5%
+  -webkit-text-size-adjust: 100%
+  -ms-text-size-adjust: 100%
+
+body,
+button,
+input,
+select,
+textarea
+  $type: map-get($font, base)
+  font-size: map-get($type, font-size)
+  line-height: map-get($type, line-height)
+
+
+// ####################
+// Headlines
+// ####################
 
 h1, h2, h3, h4
   font-family: inherit
   margin: 0
-  +cf
 
 h1
-  @extend %t-xlarge
+  // @extend %t-xlarge
 h2
-  @extend %t-large
+  // @extend %t-large
 h3
-  @extend %t-medium
+  // @extend %t-medium
+
 
 a:link,
 a:visited
@@ -48,6 +71,10 @@ a:visited
 .layout-alignment
   margin: 0 auto
 
+.testtitle
+  +font(medium)
+
+
 
 
 // ####################
@@ -62,7 +89,6 @@ a:visited
 @import "components/newsletter"
 @import "components/rss"
 @import "components/product"
-
 
 
 // ####################
