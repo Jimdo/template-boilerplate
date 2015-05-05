@@ -10,27 +10,7 @@
 // ####################
 
 @import "base/reset"
-@import "base/font"
 @import "base/variables"
-
-
-// ####################
-// General REM Font settings
-// ####################
-
-html
-  font-size: 62.5%
-  -webkit-text-size-adjust: 100%
-  -ms-text-size-adjust: 100%
-
-body,
-button,
-input,
-select,
-textarea
-  $type: map-get($font, base)
-  font-size: map-get($type, font-size)
-  line-height: map-get($type, line-height)
 
 
 // ####################
