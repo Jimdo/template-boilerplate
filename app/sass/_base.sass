@@ -1,5 +1,3 @@
-$standard-transition: 200ms ease-in
-
 // ####################
 // Import template-lib
 // ####################
@@ -13,6 +11,7 @@ $standard-transition: 200ms ease-in
 
 @import "base/reset"
 @import "base/font"
+@import "base/variables"
 
 
 // ####################
@@ -43,11 +42,13 @@ h1, h2, h3, h4
   margin: 0
 
 h1
-  // @extend %t-xlarge
+  +font(xlarge)
+
 h2
-  // @extend %t-large
+  +font(large)
+
 h3
-  // @extend %t-medium
+  +font(medium)
 
 
 a:link,
@@ -70,11 +71,6 @@ a:visited
 // CSS class for layout alignment with align to center as default
 .layout-alignment
   margin: 0 auto
-
-.testtitle
-  +font(medium)
-
-
 
 
 // ####################
