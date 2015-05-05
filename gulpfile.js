@@ -147,7 +147,7 @@ gulp.task('connect', function() {
  */
 gulp.task('watch', function () {
   gulp.watch([config.folders.base + '/**/*.jade'], ['renderHTML']);
-  gulp.watch([config.folders.base + '/sass/**/*.sass'], ['renderCSS']);
+  gulp.watch([config.folders.base + '/sass/**/*.sass', config.folders.base + '/sass/**/*.scss'], ['renderCSS']);
   gulp.watch([config.folders.base + '/' + config.files.config + '.cson'], ['renderHTML']);
 });
 
