@@ -70,7 +70,8 @@
   a:visited
     color: $white
     text-decoration: none
-    +rem(padding, 5px 10px)
+    +rem(padding, 15px 35px)
+    display: block
 
   // used the > to target ONLY the real current/parent link,
   // not the nested links "beneath" that one
@@ -78,6 +79,8 @@
   .j-nav-current > a:visited,
   .j-nav-parent > a:link,
   .j-nav-parent > a:visited,
+    background-color: $subnavi-background-color
+
   a:hover,
   a:focus,
   a:active
@@ -92,16 +95,24 @@
 // ####################
 
 .j-nav-level-1
+  margin: 0
+  text-align: center
 
   li
+    display: inline-block
 
   a:link,
   a:visited
+    color: $white
+    text-decoration: none
+    +rem(padding, 7px 15px)
+    display: block
 
   .j-nav-current > a:link,
   .j-nav-current > a:visited,
   .j-nav-parent > a:link,
   .j-nav-parent > a:visited,
+
   a:hover,
   a:focus,
   a:active
@@ -116,11 +127,18 @@
 // ####################
 
 .j-nav-level-2
+  margin: 0
+  text-align: center
 
   li
+    display: inline-block
 
   a:link,
   a:visited
+    color: $white
+    text-decoration: none
+    +rem(padding, 7px 15px)
+    display: block
 
   .j-nav-current > a:link,
   .j-nav-current > a:visited,
