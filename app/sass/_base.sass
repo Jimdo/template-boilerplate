@@ -16,44 +16,6 @@
 
 
 // ####################
-// Headlines
-// ####################
-
-h1, h2, h3, h4
-  font-family: inherit
-  margin: 0
-
-h1
-  +font(xlarge)
-
-h2
-  +font(large)
-
-h3
-  +font(medium)
-
-
-// ####################
-// Image links
-// ####################
-
-a:link,
-a:visited
-  img
-    border: 0
-
-
-// ####################
-// Website title
-// ####################
-
-.j-website-title-content
-  +font(xlarge)
-  text-align: center
-  color: $black
-
-
-// ####################
 // Import layout
 // ####################
 
@@ -67,6 +29,8 @@ a:visited
 // Import components
 // ####################
 
+@import "components/website-title"
+@import "components/headlines"
 @import "components/blog"
 @import "components/comments"
 @import "components/download"
