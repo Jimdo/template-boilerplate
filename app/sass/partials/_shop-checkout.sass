@@ -41,7 +41,7 @@
 #cc-checkout-gutter
   +cf
   .cc-checkout-btn
-    @extend %btn-std
+    +btn-std
     // right floating button for the next step makes sense. For western countries at least ;)
     float: right
 
@@ -49,7 +49,7 @@
   input[type="text"],
   input[type="email"],
   textarea
-    @extend %input-std
+    +input-std
     width: 70%
   label
     display: block
@@ -64,7 +64,7 @@
   // @extend %t-medium
   padding: 1em 0 0.5em
   a
-    // @extend %t-small
+    +font(small)
 
 // Display the total sum of the purchase bold
 .cc-checkout-total
@@ -90,7 +90,7 @@
 
 // small print at the bottom of the checkout table should be small
 .cc-checkout-hint
-  // @extend %t-small
+  +font(small)
 
 // You probably want that checkbox aligned to the right side of the checkout.
 .cc-checkout-shipping-address-checker
