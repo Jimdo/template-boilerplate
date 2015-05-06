@@ -1,16 +1,42 @@
 extends ../bower_components/template-lib/jadelib/layout.jade
 
 block content 
-  .layout-alignment
-    header
-      nav
-        .navigation-colors
+  .layout-alignment.jtpl-website
+    
+    //- ####################
+    //- Header Area 
+    //- ####################
+    
+    header.jtpl-header
+      
+      //- Navigation 
+      nav.jtpl-header__navigation.navigation-colors
+        div.jtpl-header__navigation-inner
           var(data-level='1') navigation
-      div
-        var(max-height='200') logo
-        var title
+      
+      //- Logo and Title 
+      div.jtpl-header__brand
+        //- Logo
+        div.jtpl-header__logo
+          var(max-height='200') logo
+        
+        //- Title
+        div.jtpl-header__title  
+          var title
+    
+    
+    //- ####################
+    //- Content Area
+    //- ####################
+    
     section.content-options
       var content
+    
+    
+    //- ####################
+    //- Sidebar Area 
+    //- ####################
+    
     aside
       .subnavigation-colors
         div
@@ -18,6 +44,12 @@ block content
 
       section.sidebar-options
         var sidebar
+        
+        
+    //- ####################
+    //- Footer Area 
+    //- ####################
+    
     footer.footer-options
       var footer
 

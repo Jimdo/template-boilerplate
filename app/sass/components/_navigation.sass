@@ -7,8 +7,10 @@
 
 .navigation-colors
   ul
+    margin: 0
 
   li
+
 
   // Style the current/parent link (and only this one.)
   .j-nav-current,
@@ -58,11 +60,17 @@
 // ####################
 
 .j-nav-level-0
+  margin: 0
+  text-align: center
 
   li
+    display: inline-block
 
   a:link,
   a:visited
+    color: $white
+    text-decoration: none
+    +rem(padding, 5px 10px)
 
   // used the > to target ONLY the real current/parent link,
   // not the nested links "beneath" that one
