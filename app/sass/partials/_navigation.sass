@@ -1,4 +1,9 @@
-// Style the main navigation. Uses the class which also adds functionality.
+// ####################
+// Main Navigation Wrapper
+//
+// Style here general stuff for the navigation wrapper.
+// Uses the class which also adds style mode functionality.
+// ####################
 
 .navigation-colors
   ul
@@ -6,8 +11,8 @@
   li
 
   // Style the current/parent link (and only this one.)
-  .cc-nav-current,
-  .cc-nav-parent
+  .j-nav-current,
+  .j-nav-parent
     > a:link,
     > a:visited
 
@@ -15,7 +20,15 @@
     > a:focus,
     > a:active
 
-// Style the second navigation.
+
+// ####################
+// Subnavigation
+//
+// This is a separated navigation used in templates
+// for the second or/and third level. If used in a template style
+// it here.
+// ####################
+
 .subnavigation-colors
   ul
   li
@@ -26,8 +39,8 @@
   a:focus,
   a:active
 
-  .cc-nav-current,
-  .cc-nav-parent
+  .j-nav-current,
+  .j-nav-parent
     > a:link,
     > a:visited
 
@@ -35,10 +48,16 @@
     > a:focus,
     > a:active
 
-// General navigation styles. Please be careful with overwriting style editor stuff here!
 
-// first navigation level. This is a UL
-.cc-nav-level-0
+// ####################
+// First Navigation Level
+//
+// Style here the first list of the navigation.
+// Jimdo provides three levels for a navigation.
+// Please be careful with overwriting style editor stuff here!
+// ####################
+
+.j-nav-level-0
 
   li
 
@@ -47,42 +66,58 @@
 
   // used the > to target ONLY the real current/parent link,
   // not the nested links "beneath" that one
-  .cc-nav-current > a:link,
-  .cc-nav-current > a:visited,
-  .cc-nav-parent > a:link,
-  .cc-nav-parent > a:visited,
+  .j-nav-current > a:link,
+  .j-nav-current > a:visited,
+  .j-nav-parent > a:link,
+  .j-nav-parent > a:visited,
   a:hover,
   a:focus,
   a:active
 
-// second navigation level. This is a UL
-.cc-nav-level-1
+
+// ####################
+// Second Navigation Level
+//
+// Style here the second list of the navigation.
+// Jimdo provides three levels for a navigation.
+// Please be careful with overwriting style editor stuff here!
+// ####################
+
+.j-nav-level-1
 
   li
 
   a:link,
   a:visited
 
-  .cc-nav-current > a:link,
-  .cc-nav-current > a:visited,
-  .cc-nav-parent > a:link,
-  .cc-nav-parent > a:visited,
+  .j-nav-current > a:link,
+  .j-nav-current > a:visited,
+  .j-nav-parent > a:link,
+  .j-nav-parent > a:visited,
   a:hover,
   a:focus,
   a:active
 
-// third navigation level. This is a UL
-.cc-nav-level-2
+
+// ####################
+// Third Navigation Level
+//
+// Style here the third list of the navigation.
+// Jimdo provides three levels for a navigation.
+// Please be careful with overwriting style editor stuff here!
+// ####################
+
+.j-nav-level-2
 
   li
 
   a:link,
   a:visited
 
-  .cc-nav-current > a:link,
-  .cc-nav-current > a:visited,
-  .cc-nav-parent > a:link,
-  .cc-nav-parent > a:visited,
+  .j-nav-current > a:link,
+  .j-nav-current > a:visited,
+  .j-nav-parent > a:link,
+  .j-nav-parent > a:visited,
   a:hover,
   a:focus,
   a:active
