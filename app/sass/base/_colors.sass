@@ -1,13 +1,41 @@
 // ####################
 // Basic Colors
+//
+// Basic declarated colors.
 // ####################
 
 $black: #000000
 $white: #FFFFFF
 
+$light-grey: #DBDBDB
+$dark-grey: #3B3B3B
+
+$main-color: #2BA6CC
+$accent-color: #6EE0DE
+
 
 // ####################
 // Adjusted Colors
+//
+// Calculated colors from the
+// basic colors. You can use this colors
+// in more then one case.
+// ####################
+
+$black-light: lighten( $black, 10% )
+
+$main-color-light: lighten( $main-color, 15% )
+$main-color-dark: darken( $main-color, 15% )
+
+$accent-color-light: lighten($accent-color, 15%)
+$accent-color-dark darken($accent-color, 15%)
+
+
+// ####################
+// Component Colors
+//
+// Every variable here are only used one time!
 // ####################
 
 $subnavi-background-color: lighten($black, 30%)
+$footer-background-color: #415454
