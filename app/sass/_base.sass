@@ -53,25 +53,10 @@ a:visited
   color: $black
 
 
-// CSS class for the stylable content container
-.content-options
-
-// CSS class for the stylable sidebar container
-.sidebar-options
-
-// CSS class for the stylable footer container
-.footer-options
-
-// CSS class for layout alignment with align to center as default
-.layout-alignment
-  margin: 0 auto
-
-
 // ####################
-// Import layout stylings
+// Import layout
 // ####################
 
-@import "layout/website"
 @import "layout/header"
 @import "layout/content"
 @import "layout/sidebar"
@@ -79,7 +64,7 @@ a:visited
 
 
 // ####################
-// Import module stylings
+// Import components
 // ####################
 
 @import "components/blog"
@@ -91,13 +76,7 @@ a:visited
 @import "components/rss"
 @import "components/product"
 @import "components/navigation"
-
-
-// ####################
-// Import miscellaneous stuff
-// ####################
-
-@import "partials/password-page"
-@import "partials/shop-checkout"
-@import "partials/shopping-cart"
-@import "partials/add-to-cart-response-overlay"
+@import "components/password-page"
+@import "components/shop-checkout"
+@import "components/shopping-cart"
+@import "components/add-to-cart-response-overlay"

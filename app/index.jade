@@ -1,58 +1,57 @@
 extends ../bower_components/template-lib/jadelib/layout.jade
 
 block content 
-  .layout-alignment.jtpl-website
+  
+  //- ####################
+  //- Header Area 
+  //- ####################
+  
+  header.jtpl-header
     
-    //- ####################
-    //- Header Area 
-    //- ####################
+    //- Main Navigation
+    nav.jtpl-header__navigation.navigation-colors
+      div.jtpl-header__navigation-inner
+        var(data-level='1') navigation
     
-    header.jtpl-header
+    //- Subnavigation 
+    .subnavigation-colors.jtpl-header__navigation--sub
+      div.jtpl-header__navigation-inner
+        var(data-level='2:3') navigation
+    
+    //- Logo and Title 
+    div.jtpl-header__brand
       
-      //- Main Navigation
-      nav.jtpl-header__navigation.navigation-colors
-        div.jtpl-header__navigation-inner
-          var(data-level='1') navigation
+      //- Logo
+      div.jtpl-header__logo
+        var(max-height='200') logo
       
-      //- Subnavigation 
-      .subnavigation-colors.jtpl-header__navigation--sub
-        div.jtpl-header__navigation-inner
-          var(data-level='2:3') navigation
+      //- Title
+      div.jtpl-header__title  
+        var title
+  
+  
+  //- ####################
+  //- Content Area
+  //- ####################
+  
+  section.content-options.jtpl-content
+    var content
+  
+  
+  //- ####################
+  //- Sidebar Area 
+  //- ####################
+  
+  aside.sidebar-options.jtpl-sidebar
+    var sidebar
       
-      //- Logo and Title 
-      div.jtpl-header__brand
-        
-        //- Logo
-        div.jtpl-header__logo
-          var(max-height='200') logo
-        
-        //- Title
-        div.jtpl-header__title  
-          var title
-    
-    
-    //- ####################
-    //- Content Area
-    //- ####################
-    
-    section.content-options.jtpl-content
-      var content
-    
-    
-    //- ####################
-    //- Sidebar Area 
-    //- ####################
-    
-    aside.sidebar-options.jtpl-sidebar
-      var sidebar
-        
-        
-    //- ####################
-    //- Footer Area 
-    //- ####################
-    
-    footer.footer-options.jtpl-footer
-      div.jtpl-footer__inner
-        var footer
+      
+  //- ####################
+  //- Footer Area 
+  //- ####################
+  
+  footer.footer-options.jtpl-footer
+    div.jtpl-footer__inner
+      var footer
 
         
