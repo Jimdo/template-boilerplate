@@ -9,16 +9,19 @@ block content
     
     header.jtpl-header
       
-      //- Navigation 
+      //- Main Navigation
       nav.jtpl-header__navigation.navigation-colors
         div.jtpl-header__navigation-inner
           var(data-level='1') navigation
+      
+      //- Subnavigation 
       .subnavigation-colors.jtpl-header__navigation--sub
         div.jtpl-header__navigation-inner
           var(data-level='2:3') navigation
       
       //- Logo and Title 
       div.jtpl-header__brand
+        
         //- Logo
         div.jtpl-header__logo
           var(max-height='200') logo
@@ -40,11 +43,8 @@ block content
     //- Sidebar Area 
     //- ####################
     
-    aside
-      
-
-      section.sidebar-options
-        var sidebar
+    aside.sidebar-options.jtpl-sidebar
+      var sidebar
         
         
     //- ####################
