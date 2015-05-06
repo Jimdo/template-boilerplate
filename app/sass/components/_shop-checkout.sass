@@ -4,7 +4,7 @@
 // For the checkout steps, these are some helpful classes to get the general
 // checkout bar styling done. Feel free to throw in some colors here.
 #cc-checkout-steps
-  +cf
+  +jtlib-cf
   list-style-type: none
   margin: 1em 0
   padding: 0
@@ -39,7 +39,7 @@
 // For the actual checkout, the next declarations make sure you see some nice forms
 // If you want to keep your effort small, this is a great preset to work with.
 #cc-checkout-gutter
-  +cf
+  +jtlib-cf
   .cc-checkout-btn
     +btn-std
     // right floating button for the next step makes sense. For western countries at least ;)
@@ -64,7 +64,7 @@
   // @extend %t-medium
   padding: 1em 0 0.5em
   a
-    +font(small)
+    +jtlib-font(small)
 
 // Display the total sum of the purchase bold
 .cc-checkout-total
@@ -90,7 +90,7 @@
 
 // small print at the bottom of the checkout table should be small
 .cc-checkout-hint
-  +font(small)
+  +jtlib-font(small)
 
 // You probably want that checkbox aligned to the right side of the checkout.
 .cc-checkout-shipping-address-checker
