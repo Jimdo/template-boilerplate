@@ -68,7 +68,7 @@ Classify the markup with [BEM](http://www.smashingmagazine.com/2012/04/16/a-new-
 
 #### Example:
 Create a block named `.jtpl-header`. This block has several elements like `inner`, `brand`,
-`logo`, (...).
+`logo`, `(..)`.
 
 ```jade
 header.jtpl-header
@@ -134,7 +134,7 @@ The stylings of every block is located in an extra Sass file, based in `app/sass
 
 ### Sass
 
-General strucuture for sass folder:
+General structure for sass folder:
 
 ```
 sass/
@@ -163,6 +163,21 @@ sass/
 `– _base.sass            # Import all partials
 `- style.sass            # Basic for rendered main css file
 `- variation.sass        # Basic for rendered variation css file
+```
+
+### Separation
+
+Structure Sass and Jade files with blocks to separate parts and make it more
+readable:
+
+```sass
+// ####################
+// First Navigation Level
+//
+// Style here the first list of the navigation.
+// Jimdo provides three levels for a navigation.
+// Please be careful with overwriting style editor stuff here!
+// ####################
 ```
 
 ## Configuration
