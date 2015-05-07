@@ -73,8 +73,8 @@ The structure is always the same. The property is the name of the meta tag. the 
 In CSON file:
 
 ```cson
-  meta
-    "property": "value"
+meta:
+  "property": "value"
 ```
 
 Converted in HTML:
