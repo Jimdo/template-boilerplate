@@ -14,11 +14,11 @@ Then you can configure your local enviroment.
 - for [Sass](http://sass-lang.com/) you need to have a working [Ruby](https://www.ruby-lang.org/en/) installed. If you are new to the Ruby world, by all means install a Ruby version manager like [RVM](http://rvm.io/) (or [rbenv](http://rbenv.org/)).
 - We're using Node.js for several stuff to provide the boilerplate. So you need to have a current version of [node.js](http://nodejs.org/).
 - the serve-and-compile engine is [Gulp](http://gulpjs.com/). Install it global on your machine:  
-      
+
       `$ npm install --global gulp # install gulp global`
 
 - Same to bower: For our template library with needed code like SASS mixins or the jade layout you need [bower](http:/bower.io/). Install it with:
-      
+
       `$ npm install -g bower`
 
 ### Installation
@@ -38,6 +38,132 @@ The boilerplate supports Livereload, install a chrome extension for it and use i
 
 Install the [Chrome extension](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei) of [LiveReload](http://livereload.com/) for more unicorn.
 
+## General advice
+
+The nesting within these files is kept as flat as possible. This helps to avoid overriding style mode settings for the user. If you nest too deep, your selectors are too powerful to be overridden. Also, it's just not necessary to do that in most cases, so just don't do it.
+
+Most of the partials provide a good basis to code from. Actually, filling the `base` folder with the general colors, typography and variables to gets you pretty far already. Adjust the buttons in the `_buttons.sass` to get going.
+
+The template-lib provides some helpful mixins for sass, see more about this [here](https://github.com/Jimdo/template-lib/blob/master/README.md).
+
+To easily build variations, simply alter the variables you already use within the style.sass. It's the fastest way to create variations from the basic setup of the `style.sass` / `base.sass`
+
+If you want to load various webfonts, it's best to do this for all variations etc within the `_base.sass`. Keep in mind that every font means additional load for the template users.
+
+## Constraints
+
+The boilerplate comes with some constraints to make it much easier to work with.
+
+### Prefix
+
+To make clear which kind of stylings comes directly from the template use a prefix:
+
+```
+.jtpl-
+```
+
+### BEM
+
+Classify the markup with [BEM](http://www.smashingmagazine.com/2012/04/16/a-new-front-end-methodology-bem/). It protects your code and makes it faster and easier to find the styles of a element.
+
+#### Example:
+Create a block named `.jtpl-header`. This block has several elements like `inner`, `brand`,
+`logo`, (...).
+
+```jade
+header.jtpl-header
+
+  //- Main Navigation
+  nav.jtpl-header__navigation.navigation-colors
+    div.jtpl-header__navigation-inner
+      var(data-level='1') navigation
+
+  //- Subnavigation
+  .subnavigation-colors.jtpl-header__navigation--sub
+    div.jtpl-header__navigation-inner
+      var(data-level='2:3') navigation
+
+  //- Logo and Title
+  div.jtpl-header__brand
+
+    //- Logo
+    div.jtpl-header__logo
+      var(max-height='200') logo
+
+    //- Title
+    div.jtpl-header__title  
+      var title
+```
+
+The stylings of every block is located in an extra Sass file, based in `app/sass/layout/`. The naming of a file is the same like a block, so in this case: `app/sass/layout/_header.sass`.
+
+```sass
+// ####################
+// Header Layout Block
+// ####################
+
+.jtpl-header
+  display: block
+
+  &__navigation
+    background-color: $black
+    boz-sizing: border-box
+
+    &--sub
+      background-color: $subnavi-background-color
+
+  &__navigation-inner
+    color: $white
+    +jtlib-rem( width, 960px )
+    +jtlib-rem( margin, 0 auto)
+
+
+  &__brand
+    background-color: $white
+    +jtlib-rem( padding, 20px)
+    boz-sizing: border-box
+
+  &__logo
+    +jtlib-rem( width, 960px )
+    +jtlib-rem( margin, 0 auto)
+
+  &__title
+    +jtlib-rem( width, 960px )
+    +jtlib-rem( margin, 0 auto)
+```
+
+### Sass
+
+General strucuture for sass folder:
+
+```
+sass/
+|
+|– base/
+|   |– _buttons.sass     # Mixins for button and input styling
+|   |– _colors.sass      # Colors declaration
+|   |– _typography.sass  # Typography rules
+|   |– _typography.sass  # Typography rules
+|   |– _variables.sass   # variables definition
+|
+|– components/
+|   |– _blog.sass        # Blog Module
+|   |– _comments.sass    # Comment Module
+|   |– _headlines.scss   # Headlines
+|   |– _navigation.scss  # Navigation
+|   ...                  # Etc…
+|
+|– layout/
+|   |– _content.sass     # Content Block
+|   |– _header.sass      # Header Block
+|   |– _footer.sass      # Footer Block
+|   |– _sidebar.sass     # Sidebar Block
+|   ...                  # Etc…
+|
+`– _base.sass            # Import all partials
+`- style.sass            # Basic for rendered main css file
+`- variation.sass        # Basic for rendered variation css file
+```
 
 ## Configuration
 
@@ -90,7 +216,7 @@ Converted in HTML:
 
 Add a path to the maintenance css file. Usually the path is like:
 
-```
+```cson
 maincss: "css/style.min.css"
 ```
 
@@ -130,19 +256,6 @@ Every variation has a identifier like `reverse` or `light`. Be sure you use ever
 You need to set three values for every variation: A name, a path to the rendered css file and a color. The color
 will be used for example as little bullets in the jimdo app to scroll through the variations.
 
-## General advice
-
-The nesting within these files is kept as flat as possible. This helps to avoid overriding style mode settings for the user. If you nest too deep, your selectors are too powerful to be overridden. Also, it's just not necessary to do that in most cases, so just don't do it.
-
-Most of the partials provide a good basis to code from. Actually, filling the `base` folder with the general colors, typography and variables to gets you pretty far already. Adjust the buttons in the `_buttons.sass` to get going.
-
-The template-lib provides some helpful mixins for sass, see more about this [here](https://github.com/Jimdo/template-lib/blob/master/README.md).
-
-To easily build variations, simply alter the variables you already use within the style.sass. It's the fastest way to create variations from the basic setup of the `style.sass` / `base.sass`
-
-If you want to load various webfonts, it's best to do this for all variations etc within the `_base.sass`. Keep in mind that every font means additional load for the template users.
-
-
 ## Creating templates
 
 1. Open your design in Chrome (`grunt` should have done so at [localhost:8080](http://localhost:8080/)) and start the devkit via the little extension icon on the top right. The devkit will open in the browser now.
@@ -163,13 +276,7 @@ Design variations and variables appear in a "Design Options" panel overlaying th
 
 ### Variations
 
-Variations are separate CSS files linked from the head of your HTML document.
-
-*Variation example:*
-
-```html
-<link rel="stylesheet-variation" data-name="Blue steel" href="css/variation-blue.css" data-icon="#79BACC" />
-```
+Variations are separate CSS files linked from the head of your HTML document.Configure the Variations in the `template.cson`. More about this in [Configure Variations](#configure-variations).
 
 These stylesheets overwrite settings in the default `style.css`. They can be switched on and off via the Design Options panel.
 
@@ -181,7 +288,7 @@ You can add the ability to change certain parts of your template simply by addin
 
 For new designs, the Design Options panel will also show up in the Jimdo siteadmin. The user can select variations & variables here and will be able to save those as a custom setting created for their particular design.
 
-[You can find the complete documentation here](http://live.dmp.jimdo-server.com/pages/customization_information).
+[You can find the complete documentation here](http://devkit.dmp.jimdo-server.com/).
 
 ---
 
