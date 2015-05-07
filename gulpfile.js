@@ -35,7 +35,7 @@ var config = {
   },
 
   connection: {
-    port: 9000,
+    port: 8080,
     livereload: false
   },
 
