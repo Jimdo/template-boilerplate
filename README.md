@@ -14,9 +14,12 @@ Then you can configure your local enviroment.
 - for [Sass](http://sass-lang.com/) you need to have a working [Ruby](https://www.ruby-lang.org/en/) installed. If you are new to the Ruby world, by all means install a Ruby version manager like [RVM](http://rvm.io/) (or [rbenv](http://rbenv.org/)).
 - We're using Node.js for several stuff to provide the boilerplate. So you need to have a current version of [node.js](http://nodejs.org/).
 - the serve-and-compile engine is [Gulp](http://gulpjs.com/). Install it global on your machine:  
-      $ npm install --global gulp # install gulp global
+      
+      `$ npm install --global gulp # install gulp global`
+
 - Same to bower: For our template library with needed code like SASS mixins or the jade layout you need [bower](http:/bower.io/). Install it with:
-      $ npm install -g bower
+      
+      `$ npm install -g bower`
 
 ### Installation
 
