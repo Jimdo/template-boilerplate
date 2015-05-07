@@ -2,15 +2,9 @@
 
 **With this boilerplate, you can easily develop new templates for Jimdo.**
 
-## Setup
+## Dependencies
 
-First download and install the Chrome extention:
-http://devkit.dmp.jimdo-server.com
-
-Then you can configure your local enviroment.
-
-### Dependencies
-
+- download and install the [Jimdo Devkit Chrome Extension](http://devkit.dmp.jimdo-server.com)
 - for [Sass](http://sass-lang.com/) you need to have a working [Ruby](https://www.ruby-lang.org/en/) installed. If you are new to the Ruby world, by all means install a Ruby version manager like [RVM](http://rvm.io/) (or [rbenv](http://rbenv.org/)).
 - We're using Node.js for several stuff to provide the boilerplate. So you need to have a current version of [node.js](http://nodejs.org/).
 - the serve-and-compile engine is [Gulp](http://gulpjs.com/). Install it global on your machine:  
@@ -21,7 +15,7 @@ Then you can configure your local enviroment.
 
       `$ npm install -g bower`
 
-### Installation
+## Installation
 
 Go into your boilerplate folder and copy the follwing commands and paste them into your terminal:
 
