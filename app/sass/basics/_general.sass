@@ -1,0 +1,29 @@
+// ####################
+// Basic stuff
+// ####################
+
+body
+  color: $base-1
+  font-family: $font-family
+  margin: 0
+  padding: 0
+
+
+// ####################
+// Basic link styling
+// needed because we
+// have no general link class
+// ####################
+
+a:link,
+a:visited
+  color: $accent-color-1
+  transition: color $standard-transition
+a:hover,
+a:active,
+a:focus
+  color: $base-1
+
+a
+  img
+    border: 0

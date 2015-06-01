@@ -1,20 +1,22 @@
+var autoprefixer        = require('gulp-autoprefixer');
 var clean               = require('gulp-clean');
+var clone               = require('gulp-clone')
 var concat              = require('gulp-concat');
 var connect             = require('gulp-connect');
+var cson                = require('gulp-cson');
+var data                = require('gulp-data');
+var fs                  = require('fs');
 var gulp                = require('gulp');
+var gulpif              = require('gulp-if');
 var jade                = require('gulp-jade');
 var minifyCSS           = require('gulp-minify-css');
 var minifyHTML          = require('gulp-minify-html');
 var open                = require('gulp-open');
+var rename              = require('gulp-rename');
 var runSequence         = require('run-sequence');
 var sass                = require('gulp-ruby-sass');
-var autoprefixer        = require('gulp-autoprefixer');
 var sourcemaps          = require('gulp-sourcemaps');
-var data                = require('gulp-data');
-var fs                  = require('fs');
-var cson                = require('gulp-cson');
-var rename              = require('gulp-rename');
-var gulpif              = require('gulp-if');
+var livereload          = require('gulp-livereload');
 
 
 
@@ -35,8 +37,7 @@ var config = {
   },
 
   connection: {
-    port: 8080,
-    livereload: false
+    port: 8080
   },
 
   sass: {
@@ -79,7 +80,7 @@ gulp.task('renderHTML', ['compileCSON'], function() {
     }))
     .pipe(jade())
     .pipe(gulp.dest(config.folders.dist))
-    .pipe(connect.reload());
+    .pipe(livereload());
 });
 
 
@@ -111,7 +112,19 @@ gulp.task('renderCSS', function() {
     .pipe(gulpif(config.sass.minified, minifyCSS()))
     .pipe(gulpif(config.sass.minified, rename({suffix: ".min"})))
     .pipe(gulp.dest(config.folders.dist + '/css/'))
-    .pipe(connect.reload());
+    .pipe(livereload());
+});
+
+
+
+/**
+* Clone kickstarter into dist folder
+*/
+gulp.task('kickstarter', function() {
+  return gulp.src(config.folders.base + 'kickstarter.json')
+    .pipe(clone())
+    .pipe(gulp.dest(config.folders.dist))
+    .pipe(livereload());
 });
 
 
@@ -135,8 +148,7 @@ gulp.task('open-browser', function(){
 gulp.task('connect', function() {
  return connect.server({
    root: [config.folders.dist],
-   port: config.connection.port,
-   livereload: config.connection.livereload
+   port: config.connection.port
  });
 });
 
@@ -146,9 +158,11 @@ gulp.task('connect', function() {
  * Watcher
  */
 gulp.task('watch', function () {
-  gulp.watch([config.folders.base + '/**/*.jade'], ['renderHTML']);
-  gulp.watch([config.folders.base + '/sass/**/*.sass', config.folders.base + '/sass/**/*.scss'], ['renderCSS']);
-  gulp.watch([config.folders.base + '/' + config.files.config + '.cson'], ['renderHTML']);
+  livereload({ start: true });
+  gulp.watch([config.folders.base + '**/*.jade'], ['renderHTML']);
+  gulp.watch([config.folders.base + 'sass/**/*.sass', config.folders.base + '/sass/**/*.scss'], ['renderCSS']);
+  gulp.watch([config.folders.base + config.files.config + '.cson'], ['renderHTML']);
+  gulp.watch([config.folders.base + 'kickstarter.json'], ['kickstarter']);
 });
 
 
@@ -161,6 +175,7 @@ gulp.task('build', function(callback) {
              'cleanTMP',
              'renderHTML',
              'renderCSS',
+             'kickstarter',
              'connect',
              'open-browser',
              'watch',

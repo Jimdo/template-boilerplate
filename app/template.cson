@@ -52,26 +52,8 @@ maincss: "css/style.min.css"
 
 variations:
 
-  # Reverse
+  # Variation with fixed navigation
   reverse:
-    name: "Reverse"
-    link: "css/variation.min.css"
-    color: "#2f2f2f"
-
-  # Saturated
-  saturated:
-    name: "Saturated"
-    link: "css/variation.min.css"
-    color: "#2f2f2f"
-
-  # Light
-  light:
-    name: "Light"
-    link: "css/variation.min.css"
-    color: "#2f2f2f"
-
-  # Light
-  dark:
-    name: "Dark"
-    link: "css/variation.min.css"
+    name: "Dummy"
+    link: "css/var-dummy.min.css"
     color: "#2f2f2f"

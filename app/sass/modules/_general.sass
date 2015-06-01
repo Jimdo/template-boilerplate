@@ -1,0 +1,24 @@
+// #####################
+// Content Module
+// #####################
+
+.j-module
+  margin: 0 auto
+  max-width: $contentwidth
+  padding: 0
+  box-sizing: border-box
+
+  // container with full width
+  &--fluid
+    max-width: none
+    padding: 0
+
+    .j-module
+      max-width: none
+      padding: 0
+
+  // Class to wrap the content within
+  // a full width container
+  &__wrapper
+    margin: 0 auto
+    max-width: $contentwidth
