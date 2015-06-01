@@ -1,0 +1,242 @@
+{
+  "version": "0.0.1",
+  "rules": {
+
+    "main-color": {
+      "label": "dmp.kickstarter.color.main",
+      "tooltip": "dmp.kickstarter.tooltip.color",
+      "option": {
+        "type": "color-picker",
+        "maincolor": 1000
+      },
+      "output": [
+        "module-title-font-color",
+        "subnav-box-background-color",
+        "content-button-background-color",
+        "content-button-border-color",
+        "content-callToAction1-background-color",
+        "content-callToAction2-background-color",
+        "content-callToAction3-background-color",
+        "content-callToAction1-border-color",
+        "content-callToAction2-border-color",
+        "content-callToAction3-border-color",
+        "content-link-color",
+        "content-hr-color",
+        "content-input-border-color",
+        "content-asterisk-color",
+        "shop-price-textcolor",
+        "shop-button-background-color",
+        "shop-button-border-color",
+        "footer-link-color",
+        "second-content-link-color",
+        "second-content-input-border-color",
+        "second-content-asterisk-color",
+        "second-content-button-background-color",
+        "second-content-button-border-color",
+        "second-content-callToAction1-background-color",
+        "second-content-callToAction2-background-color",
+        "second-content-callToAction3-background-color",
+        "second-content-callToAction1-border-color",
+        "second-content-callToAction2-border-color",
+        "second-content-callToAction3-border-color",
+        "border-options-color",
+        "nav-box-background-color"
+      ],
+      "tasks": {
+        "addToPalette": true
+      }
+    },
+
+    "main-color-fade-90": {
+      "label": "dmp.kickstarter.color.main-color-fade-90",
+      "option": {
+        "type": "input"
+      },
+      "output": [
+        "nav-link-background-color"
+      ],
+      "derivation": "fade(@main-color, 90%)",
+      "tasks": {
+        "addToPalette": false
+      }
+    },
+
+    "main-color-darken-20": {
+      "label": "dmp.kickstarter.color.main-color-darken-20",
+      "option": {
+        "type": "input"
+      },
+      "output": [
+        "content-highlight-link-color",
+        "content-button-hover-background-color",
+        "content-button-border-color-hover",
+        "content-callToAction1-background-color-hover",
+        "content-callToAction2-background-color-hover",
+        "content-callToAction3-background-color-hover",
+        "content-callToAction1-border-color-hover",
+        "content-callToAction2-border-color-hover",
+        "content-callToAction3-border-color-hover",
+        "content-input-active-border-color",
+        "shop-button-hover-background-color",
+        "shop-button-border-color-hover",
+        "second-content-highlight-link-color",
+        "second-content-button-hover-background-color",
+        "second-content-button-border-color-hover",
+        "second-content-callToAction1-background-color-hover",
+        "second-content-callToAction2-background-color-hover",
+        "second-content-callToAction3-background-color-hover",
+        "second-content-callToAction1-border-color-hover",
+        "second-content-callToAction2-border-color-hover",
+        "second-content-callToAction3-border-color-hover",
+        "footer-highlight-link-color",
+        "second-content-input-active-border-color"
+      ],
+      "derivation": "darken(@main-color, 20%)",
+      "tasks": {
+        "addToPalette": false
+      }
+    },
+
+    "main-color-lighten-10": {
+      "label": "dmp.kickstarter.color.main-color-lighten-10",
+      "option": {
+        "type": "input"
+      },
+      "output": [
+        "nav-link-hi-background-color"
+      ],
+      "derivation": "lighten(@main-color, 10%)",
+      "tasks": {
+        "addToPalette": false
+      }
+    },
+
+    "main-color-contrast": {
+      "label": "dmp.kickstarter.color.main-color-contrast",
+      "option": {
+        "type": "input"
+      },
+      "output": [
+        "nav-text-color",
+        "nav-text-hi-color",
+        "content-button-textcolor",
+        "content-callToAction1-textcolor",
+        "content-callToAction2-textcolor",
+        "content-callToAction3-textcolor",
+        "content-callToAction1-textcolor-hover",
+        "content-callToAction2-textcolor-hover",
+        "content-callToAction3-textcolor-hover",
+        "shop-button-textcolor",
+        "shop-button-hover-textcolor",
+        "second-content-button-textcolor",
+        "second-content-callToAction1-textcolor",
+        "second-content-callToAction2-textcolor",
+        "second-content-callToAction3-textcolor",
+        "second-content-callToAction1-textcolor-hover",
+        "second-content-callToAction2-textcolor-hover",
+        "second-content-callToAction3-textcolor-hover"
+
+      ],
+      "derivation": "contrast(@main-color, @main-color-desaturate-45-darken-45, #ffffff)",
+      "tasks": {
+        "addToPalette": false
+      }
+    },
+
+    "main-color-greyscale": {
+      "label": "dmp.kickstarter.color.main-color-greyscale",
+      "option": {
+        "type": "input"
+      },
+      "output": [
+        "second-content-box-background-color"
+      ],
+      "derivation": "rgb(luma(@main-color), luma(@main-color), luma(@main-color))",
+      "tasks": {
+        "addToPalette": false
+      }
+    },
+
+    "main-color-greyscale-contrast": {
+      "label": "dmp.kickstarter.color.main-color-greyscale-contrast",
+      "option": {
+        "type": "input"
+      },
+      "output": [
+        "footer-font-color",
+        "second-content-font-color",
+        "second-content-h1-font-color",
+        "second-content-h2-font-color",
+        "second-content-h3-font-color",
+        "second-content-hr-color",
+        "second-content-image-subtitle-font-color"
+      ],
+      "derivation": "contrast(@main-color-greyscale, @main-color-desaturate-45-darken-45, #ffffff)",
+      "tasks": {
+        "addToPalette": false
+      }
+    },
+
+    "main-color-desaturate-45-darken-45": {
+      "label": "dmp.kickstarter.color.main-color-desaturate-45-darken-45",
+      "option": {
+        "type": "input"
+      },
+      "output": [
+        "content-font-color",
+        "content-h1-font-color",
+        "content-h2-font-color",
+        "content-h3-font-color",
+        "content-image-subtitle-font-color",
+        "blog-commentary-headline-font-color",
+        "blog-headline-font-color",
+        "datesticker-textcolor",
+        "content-input-text-color",
+        "shop-item-title-font-color",
+        "shop-oldprice-textcolor",
+        "second-content-input-text-color"
+      ],
+      "derivation": "desaturate(darken(@main-color, 45%), 45%)",
+      "tasks": {
+        "addToPalette": false
+      }
+    },
+
+    "main-font-family": {
+      "label": "dmp.kickstarter.font.family.main",
+      "tooltip": "dmp.kickstarter.tooltip.mainfont",
+      "option": {
+        "type": "font-selection",
+        "variant": "labeled",
+        "font1": 500
+      },
+      "output": [
+        "blog-commentary-headline-font-family",
+        "blog-headline-font-family",
+        "content-h1-font-family",
+        "content-h2-font-family",
+        "content-h3-font-family",
+        "module-title-font-family",
+        "second-content-h1-font-family",
+        "second-content-h2-font-family",
+        "second-content-h3-font-family",
+        "shop-item-title-font-family"
+      ]
+    },
+
+    "secondary-font-family": {
+      "label": "dmp.kickstarter.font.family.secondary",
+      "tooltip": "dmp.kickstarter.tooltip.subfont",
+      "option": {
+          "type": "font-selection",
+          "variant": "labeled",
+          "font2": 400
+      },
+      "output": [
+        "content-font-family",
+        "nav-font-family",
+        "second-content-font-family"
+      ]
+    }
+  }
+}

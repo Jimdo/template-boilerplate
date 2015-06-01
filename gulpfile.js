@@ -9,6 +9,7 @@ var fs                  = require('fs');
 var gulp                = require('gulp');
 var gulpif              = require('gulp-if');
 var jade                = require('gulp-jade');
+var livereload          = require('gulp-livereload');
 var minifyCSS           = require('gulp-minify-css');
 var minifyHTML          = require('gulp-minify-html');
 var open                = require('gulp-open');
@@ -16,7 +17,6 @@ var rename              = require('gulp-rename');
 var runSequence         = require('run-sequence');
 var sass                = require('gulp-ruby-sass');
 var sourcemaps          = require('gulp-sourcemaps');
-var livereload          = require('gulp-livereload');
 
 
 

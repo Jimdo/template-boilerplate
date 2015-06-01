@@ -100,20 +100,20 @@ The stylings of every block is located in an extra Sass file, based in `app/sass
   display: block
 
   &__navigation
-    background-color: $black
+    background-color: $base-inverted
     boz-sizing: border-box
 
     &--sub
       background-color: $subnavi-background-color
 
   &__navigation-inner
-    color: $white
+    color: $base
     +jtlib-rem( width, 960px )
     +jtlib-rem( margin, 0 auto)
 
 
   &__brand
-    background-color: $white
+    background-color: $base
     +jtlib-rem( padding, 20px)
     boz-sizing: border-box
 
