@@ -20,6 +20,7 @@
 
   // spread the button/input styles from _button.sass
 
+  // Form elements for new comment
   textarea,
   input[type="text"],
   input[type="email"],
@@ -33,6 +34,9 @@
   // the single comment entries in comment lists with or without avatar
   li
 
+// Title with number of comments
+.j-blog-comment-counter
+  +jtlib-rem(margin-bottom, 5px)
 
 .commententry,
 .com-meta
@@ -41,11 +45,8 @@
   dd
     margin: 0
 
-.com-avatar
-  float: left
-  img
-    display: block
-
+// Number of a comment
+// e.g. #23
 .number
   float: right
 

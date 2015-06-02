@@ -4,6 +4,8 @@
 
 .j-rss
   line-height: 1.5
+
+  // general module title
   h1
     a:link,
     a:visited
@@ -11,6 +13,8 @@
   // this crazy selector displays the read more button as exactly this. Just keep as is.
   br + a[target="_blank"]
     +btn-std
+
+  // title of a feed    
   .rssFeedTitle
     @extend h3
     display: block

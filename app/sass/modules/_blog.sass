@@ -7,12 +7,17 @@
   a:visited
     h2
 
+// Readmore button
 .blogreadmore,
 .comment
   &:link,
   &:visited
     +btn-std
 
+// Title of an article in selection
+.j-blogSelection
+  .j-blog-header
+    text-decoration: none
 
 
 // ####################
@@ -21,7 +26,8 @@
 
 .j-blog
 
-// Blog post header including headline, datesticker (see other file) and tags
+// Blog post header including headline,
+// datesticker (see other file) and tags
 .j-blog-meta
   +jtlib-cf
   a:link,
@@ -29,6 +35,8 @@
 
   .j-blog-header
 
+// button to jump
+// to comments
 .skiptoform
   a:link,
   a:visited
@@ -38,9 +46,10 @@
 .postmeta
 
 
-
 // ####################
 // Datesticker
+// The datesticker, displayed in
+// the blog selection as well as in every blogpost
 // ####################
 
 .datetime
