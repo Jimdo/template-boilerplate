@@ -107,6 +107,38 @@ For new designs, the Design Options panel will also show up in the Jimdo siteadm
 
 [You can find the complete documentation here](http://devkit.dmp.jimdo-server.com/).
 
+### Deploy a template
+
+Grunt will help you deploy your template very easy. Make sure, that you have the grunt plugin already in your template. Take a look [here](https://github.com/Jimdo/template-hamburg/commit/8dec5b381ae4de62782653a872e21c46c406baad). The plugin will automatically bump the version and upload the files to the Design API. 
+
+#### Upload a test version
+
+If you want to upload a test version of your template use: 
+
+```$ grunt prerelease```
+
+Grunt will take the actual version (e.g. 1.2.3) and add a number: 1.2.3--1
+
+#### Release a version
+
+Use the following command lines to release the template. The default type is a path level update, to upload 
+a minor or major update add a parameter. 
+
+```
+$ grunt release
+$ grunt release minor 
+$ grunt release major
+```
+
+#### Activate a version automatically 
+
+To easy activate the version add `--activate` to the command: 
+
+```$ grunt release --activate```
+
+Be sure that you want to activate the version without review the changes. **Every customer of the template will get the new version!**
+
+
 ---
 
 Made with <3 in Hamburg.
