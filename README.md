@@ -117,7 +117,7 @@ If you want to upload a test version of your template use:
 
 ```$ grunt prerelease```
 
-Grunt will take the actual version (e.g. 1.2.3) and add a number: 1.2.3--1
+Grunt will take the actual version (e.g. 1.2.3) and add a number: 1.2.4-0
 
 #### Release a version
 
