@@ -4,7 +4,7 @@
 
 ## Setup
 
-First download and install the Chrome extention: http://live.dmp.jimdo-server.com
+First download and install the [Chrome extention](https://devkit.dmp.jimdo-server.com/)
 
 Then you can configure your local enviroment.
 
